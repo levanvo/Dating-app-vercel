@@ -1,42 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WebPageComponent } from './web-page/web-page.component';
-import { AdminComponent } from './admin/admin.component';
-import { BodyComponent } from './web-page/body/body.component';
-import { CategoryComponent } from './web-page/category/category.component';
-import { BlogComponent } from './web-page/blog/blog.component';
-import { ContactComponent } from './web-page/contact/contact.component';
-import { CartComponent } from './web-page/cart/cart.component';
-import { DetailsPrComponent } from './web-page/details-pr/details-pr.component';
-import { SigninUpComponent } from './web-page/signin-up/signin-up.component';
-import { AdminUserComponent } from './admin-user/admin-user.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { ProductsComponent } from './admin/products/products.component';
-import { CategoriesComponent } from './admin/categories/categories.component';
-import { UsersComponent } from './admin/users/users.component';
+import { FooterComponent } from './HMF/footer/footer.component';
+import { MatchesComponent } from './HMF/matches/matches.component';
+import { ListComponent } from './HMF/list/list.component';
+import { ErrorComponent } from './HMF/error/error.component';
+import { MessageComponent } from './HMF/message/message.component';
+import { ManagerComponent } from './HMF/manager/manager.component';
+import { FriendsComponent } from './HMF/list/friends/friends.component';
+import { WaitingFriendComponent } from './HMF/list/waiting-friend/waiting-friend.component';
+import { LikedComponent } from './HMF/list/liked/liked.component';
+import { InformationComponent } from './HMF/manager/information/information.component';
+import { YourImagesComponent } from './HMF/manager/your-images/your-images.component';
 
 const routes: Routes = [
-  {path:"",component:WebPageComponent,children:[
-    {path:"",component:BodyComponent},
-    {path:"category/:id",component:CategoryComponent},
-    {path:"blog/:id",component:BlogComponent},
-    {path:"contact/:id",component:ContactComponent},
-    {path:"cart/:id",component:CartComponent},
-    {path:"details/:id",component:DetailsPrComponent},
-    {path:"signin_up",component:SigninUpComponent},
+  {path:"matches/:id",component:MatchesComponent},
+  {path:"list/:id",redirectTo:"list/:id/friends/:id",pathMatch:"full"},
+  {path:"list/:id",component:ListComponent,children:[
+    {path:"friends/:id",component:FriendsComponent},
+    {path:"waitingFriend/:id",component:WaitingFriendComponent},
+    {path:"liked/:id",component:LikedComponent},
+    {path:"",component:FriendsComponent},
   ]},
-  {path:"admin/:id",redirectTo:"admin/:id/dashboard/:id",pathMatch:"full"},
-  {path:"admin/:id",component:AdminComponent,children:[
-    {path:"dashboard/:id",component:DashboardComponent},
-    {path:"products/:id",component:ProductsComponent},
-    {path:"categories/:id",component:CategoriesComponent},
-    {path:"users/:id",component:UsersComponent},
-    {path:"",component:DashboardComponent},
+  {path:"message/:id",component:MessageComponent},
+  {path:"matches/:id/message/:id",component:MessageComponent},
+  {path:"error/:id",component:ErrorComponent},
+  {path:"manager/:id",redirectTo:"manager/:id/information/:id",pathMatch:"full"},
+  {path:"manager/:id",component:ManagerComponent,children:[
+    {path:"information/:id",component:InformationComponent},
+    {path:"yourImages/:id",component:YourImagesComponent},
   ]},
-  {path:"adminUser/:id",component:AdminUserComponent,children:[
-    
-  ]},
-  {path:"**",component:WebPageComponent,pathMatch:"full"},
+  {path:"**",component:MatchesComponent,pathMatch:"full"},
+  {path:"",redirectTo:"matches/:id",pathMatch:"full"},
 ];
 
 @NgModule({

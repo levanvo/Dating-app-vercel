@@ -1,0 +1,16 @@
+.messages{
+    background-image: url(https://res.cloudinary.com/darnprw0q/image/upload/v1686227590/test/4076929_dmco11.png);
+    background-size: 100% 100%;
+}
+.scrollListMessage{
+    overflow-y: scroll;
+}
+.scrollListMessage::-webkit-scrollbar{
+    width: 10px;
+}
+.scrollListMessage::-webkit-scrollbar-thumb{
+    background-color: rgb(176, 176, 176);
+    border-radius: 10px;
+}
+.leftMessage{border-bottom-left-radius: 5px;}
+.rightMessage{border-bottom-right-radius: 5px;}

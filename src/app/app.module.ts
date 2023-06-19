@@ -1,51 +1,48 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http";
 import { RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WebPageComponent } from './web-page/web-page.component';
-import { AdminComponent } from './admin/admin.component';
-import { BodyComponent } from './web-page/body/body.component';
-import { CategoryComponent } from './web-page/category/category.component';
-import { BlogComponent } from './web-page/blog/blog.component';
-import { ContactComponent } from './web-page/contact/contact.component';
-import { CartComponent } from './web-page/cart/cart.component';
-import { DetailsPrComponent } from './web-page/details-pr/details-pr.component';
-import { SigninUpComponent } from './web-page/signin-up/signin-up.component';
-import { AdminUserComponent } from './admin-user/admin-user.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { ProductsComponent } from './admin/products/products.component';
-import { CategoriesComponent } from './admin/categories/categories.component';
-import { UsersComponent } from './admin/users/users.component';
+import { FormsModule } from '@angular/forms';
+
+import { HeaderComponent } from './HMF/header/header.component';
+import { FooterComponent } from './HMF/footer/footer.component';
+import { MatchesComponent } from './HMF/matches/matches.component';
+import { ListComponent } from './HMF/list/list.component';
+import { MessageComponent } from './HMF/message/message.component';
+import { ErrorComponent } from './HMF/error/error.component';
+import { ManagerComponent } from './HMF/manager/manager.component';
+import { FriendsComponent } from './HMF/list/friends/friends.component';
+import { WaitingFriendComponent } from './HMF/list/waiting-friend/waiting-friend.component';
+import { LikedComponent } from './HMF/list/liked/liked.component';
+import { InformationComponent } from './HMF/manager/information/information.component';
+import { YourImagesComponent } from './HMF/manager/your-images/your-images.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    WebPageComponent,
-    AdminComponent,
-    BodyComponent,
-    CategoryComponent,
-    BlogComponent,
-    ContactComponent,
-    CartComponent,
-    DetailsPrComponent,
-    SigninUpComponent,
-    AdminUserComponent,
-    DashboardComponent,
-    ProductsComponent,
-    CategoriesComponent,
-    UsersComponent,
+    HeaderComponent,
+    FooterComponent,
+    MatchesComponent,
+    ListComponent,
+    MessageComponent,
+    ErrorComponent,
+    ManagerComponent,
+    FriendsComponent,
+    WaitingFriendComponent,
+    LikedComponent,
+    InformationComponent,
+    YourImagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

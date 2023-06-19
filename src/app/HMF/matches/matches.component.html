@@ -1,0 +1,109 @@
+<div id="volevan"></div>
+<h1 class="text-center text-3xl text-gray-600 font-medium">Your matches - {{AllUser.length}} found</h1>
+<!-- show filter find -->
+<form (ngSubmit)="onFilter()" class="flex space-x-5 justify-center mt-3">
+    <div class="flex">
+        <h5 class="my-auto">Age from :</h5>
+        <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
+            [(ngModel)]="objectFilter.numberSmall" name="numberSmall" min="17" max="70" placeholder="...?">
+    </div>
+    <div class="flex">
+        <h5 class="my-auto">Age to :</h5>
+        <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
+            [(ngModel)]="objectFilter.numberLager" name="numberLager" min="17" max="70" placeholder="...?">
+    </div>
+    <div class="flex">
+        <h5 class="my-auto">Gender :</h5>
+        <select name="gender" [(ngModel)]="objectFilter.gender"
+            class="w-24 h-9 bg-gray-200 outline-0 leading-10 text-center border-2 border-gray-100 rounded-md">
+            <option value="All">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <button type="submit" class="bg-sky-800 btn btn-primary">Apply-filters</button>
+    <button type="reset" class="bg-red-700 btn btn-danger">Reset-filters</button>
+</form>
+<!-- show all users -->
+<div class="scrollMouse w-[1200px] mx-auto h-[73vh] rounded-md bg-gray-100 mt-3 grid grid-cols-7 ">
+    <div *ngFor="let takeUser of ArrayFilter; index as i"
+        class="col-span-1 w-[160px] m-[6px] h-[210px] rounded-md shadow hover:shadow-gray-400 border border-sky-500">
+        <div class=" shellUser"><!-- relative -->
+            <div class="w-[140px] h-[150px] mx-auto rounded-md mt-2 shellImageUser">
+                <input type="checkbox" id="{{takeUser.id}}" class="infoUser1" hidden>
+                <label for="{{takeUser.id}}" class="infoUser1"><img class="w-[140px] h-[150px] cursor-pointer mx-auto rounded-md imageUser" src="{{takeUser.image}}"alt=""></label>
+                <div class="infoUser2">
+                    <div class="w-[435px] m-2 rounded-t-md h-[150px] flex space-x-2 bg-gray-100 infoReview">
+                        <img class="w-20 h-20 rounded-full" src={{takeUser.image}} alt="">
+                        <p class="text-white">{{takeUser.name}}</p>
+                        <li class="text-xs mt-1 tex"> 2 minutes ago</li>
+                    </div>
+                    <h2 class="text-center text-gray-400 mb-2">___Welcome to my personal page <3.</h2>
+                    <a href="message/{{takeUser.id}}">
+                        <div class="w-[430px] mx-auto h-10 bg-gray-100 bg-blue-500 active:scale-90 duration-100 text-white rounded-full">
+                            <p class="text-center text-xl leading-10 font-bold">Message</p>
+                        </div>
+                    </a>
+                    <div class="flex justify-center space-x-3 mt-2">
+                        <div class="w-[130px] h-[100px] rounded-md bg-gray-100">
+                            <p class="text-center text-gray-500 underline font-medium">Liked</p>
+                            <p class="text-4xl text-center mt-2 text-sky-500">{{takeUser.switchLove.length}}</p>
+                        </div>
+                        <div class="w-[130px] h-[100px] rounded-md bg-gray-100">
+                            <p class="text-center text-gray-500 underline font-medium">Favorite</p>
+                            <p class="text-4xl text-center mt-2 text-pink-400">{{takeUser.arrayBeLike.length}}</p>
+                        </div>
+                        <div class="w-[130px] h-[100px] rounded-md bg-gray-100">
+                            <p class="text-center text-gray-500 underline font-medium">Friends</p>
+                            <p class="text-4xl text-center mt-2 text-green-500">{{takeUser.arrayFriend.length}}</p>
+                        </div>
+                    </div>
+                    <div class="h-[180px] w-[430px] mx-auto bg-gray-200 mt-3 rounded-md scrollReview">
+                        <p class="p-2">{{takeUser.describes}}</p>
+                    </div>
+                </div>
+                <label for="{{takeUser.id}}" class="w-full h-full infoUser3"></label>
+            </div>
+            <!-- ladnding on the both -->
+            <div class="absolute repoContact">
+                <div class="w-[120px] h-7 flex justify-center space-x-5 formSelector">
+                    <img *ngIf="Notification==takeUser.id" title="like" (click)="like(takeUser.id)"
+                        class="w-6 opacity-75 cursor-pointer h-6 my-auto hover:scale-110 duration-200"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1684937317/test/heart_3_zhhgjo.png"
+                        alt="">
+                    <img *ngIf="Notification!=takeUser.id" title="unlike" (click)="unlike(takeUser.id)"
+                        class="w-6 cursor-pointer h-6 my-auto hover:scale-110 duration-200"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1684937219/test/heart_2_wwdjc0.png"
+                        alt="">
+                    <a routerLink="message/{{takeUser.id}}">
+                        <img title="message" class="w-6 cursor-pointer h-6 mt-[2px] hover:scale-110 duration-200"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1684896294/test/messenger_hihotl.png"
+                        alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a routerLink="#">
+            <h3 class="text-center font-medium mb-1 mt-1 nameUser">{{takeUser.name}},<span class="text-xs font-normal">{{takeUser.age}}</span></h3>
+        </a>
+        <div class="flex space-x-2 mt-[2px] justify-center">
+            <!-- *ngIf="takeUser.arrayFriend.length==0" -->
+            <div (click)="AddFriend(takeUser.id)"
+                class="w-[120px] cursor-pointer h-5 relative rounded-sm flex justify-center space-x-[2px] bg-sky-400 hover:bg-sky-500 text-white">
+                <img class="w-4 h-4 my-auto"
+                    src="https://res.cloudinary.com/darnprw0q/image/upload/v1684937103/test/add-user_ad0t6n.png" alt="">
+                <button class="text-xs text-white hover:font-medium my-auto">Add friend</button>
+            </div>
+            <!-- <div *ngFor="let show of takeUser.arrayFriend">
+                <div *ngIf="show.status==2" (click)="CancelRequest(takeUser.id)"
+                    class="w-[120px] cursor-pointer h-5 relative rounded-sm flex justify-center space-x-[2px] bg-sky-400 hover:bg-sky-500 text-white">
+                    <img class="w-4 h-4 my-auto"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1685023936/test/add-user_j7ceow.png"
+                        alt="">
+                    <button class="text-xs text-white hover:font-medium my-auto">Cancel request</button>
+                </div>
+            </div> -->
+            <!--  -->
+        </div>
+    </div>
+</div>

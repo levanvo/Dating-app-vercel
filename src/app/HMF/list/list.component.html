@@ -1,0 +1,11 @@
+<h1 class="text-center text-3xl text-gray-600 font-medium mb-2 ">List of social relations</h1>
+<div class="flex space-x-20 w-[1300px] justify-center bg-gray-100">
+    <a class="listYourself" routerLink="friends/{{KeyAccount}}"><h3 class="text-md ">Friends</h3></a>
+    <a class="listYourself" routerLink="waitingFriend/{{KeyAccount}}"><h3 class="text-md ">Invitation sent</h3></a>
+    <a class="listYourself" routerLink="liked/{{KeyAccount}}"><h3 class="text-md ">Liked</h3></a>
+</div>
+<br>
+<hr>
+<div class="">
+    <router-outlet/>
+</div>

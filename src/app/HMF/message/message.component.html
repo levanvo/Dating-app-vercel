@@ -1,0 +1,39 @@
+<!-- <h1 class="text-center text-3xl text-gray-600 font-medium">Contact - Message</h1> -->
+<div class="w-[1300px] h-[600px] rounded-md bg-gray-100 mx-auto">
+    <div class="w-[1299px] rounded-t-md bg-gray-600 h-[50px]">
+        <h1 class="font-medium text-white text-xl leading-10 ml-3">Messages</h1>
+    </div>
+    <div class="flex ">
+        <div class="w-[379px] bg-orange-100 h-[550px] leftMessage scrollListMessage">
+            
+        </div>
+        <div class="w-[920px] messages relative h-[550px] rightMessage">
+            <div class="w-[919.5px] h-10 bg-gray-300 opacity-80 ">
+                <div class="float-right flex items-center space-x-2">
+                    <p>{{UserMessage.name}}</p>
+                    <img class="w-10 h-10 rounded-full" src={{UserMessage.image}} alt="">
+                    <li class=""> offline</li>
+                    <p></p>
+                </div>
+            </div>
+            <div class="h-[469px] scrollListMessage">
+                <div *ngFor="let show of InforMessage.content">
+                    <!-- người gửi -->
+                    <div *ngIf="show.idSendMessager==AccountMessage.id" class="flex space-x-2 mb-2">
+                        <img class="w-8 h-8 rounded-md" src={{AccountMessage.image}} alt="">
+                        <p class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show.writing}}</p>
+                    </div>
+                    <!-- người nhận -->
+                    <div *ngIf="show.idSendMessager==UserMessage.id" class="flex space-x-2 mb-2">
+                        <img class="w-8 h-8 rounded-md" src={{InforMessage.imageConnect}} alt="">
+                        <p class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show.writing}}</p>
+                    </div>
+                </div>
+            </div>
+            <form (ngSubmit)="SendMessage(UserMessage.id)" class="flex space-x-1 justify-center">
+                <input [(ngModel)]="contentMessage.writing" name="writing" type="text" class="w-[600px] h-10 outline-0 pl-2 pr-2 shadow-inner shadow-gray-400 rounded-l-md" placeholder=" Writing ...">
+                <button class="w-36 h-10 bg-gray-600 text-white rounded-r-md active:scale-90 duration-100">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

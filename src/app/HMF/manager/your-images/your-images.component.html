@@ -1,0 +1,38 @@
+<!-- Image before upload -->
+<div class="w-[650px] flex space-x-2 h-10 ">
+    <p class="mt-1 ml-5 text-xl text-gray-500 mb-5 fontTextLike">Images </p>
+    <img class="w-7 h-7 mt-1 animate__animated animate__jackInTheBox animate__repeat-1" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685325933/test/image_d0nngt.png" alt="">
+</div>
+<form (ngSubmit)="UploadImage()" class="w-[900px] mx-auto h-32 bg-black flex justify-center rounded-t-md space-x-10">
+    <div class="w-[150px] h-28 my-auto rounded-md bg-gray-100">
+        <input (change)="HandleImage($event)" multiple
+         type="file" class="w-[150px] h-28 rounded-md fileimage">
+    </div>
+    <div  class="w-[400px] h-28 my-auto rounded-md bg-gray-100 scrollUplaod">
+        <div *ngFor="let getName of ArrayImageOverView; index as i">
+            <p><span class="ml-1">{{i+1}} - </span><span class="text-xs text-sky-500">{{getName}} </span></p>
+        </div>
+    </div>
+    <div class="w-[200px] h-28 my-auto rounded-md text-white font-bold">
+        <button type="submit" class="button-30 mb-2 mt-1" role="button">Upload</button>
+        <button type="reset" class="button-31" role="button">Cancel</button>
+    </div>
+</form>
+<!-- Image after upload -->
+<p *ngIf="ArrayImageSize" class="bg-black mx-auto text-center w-[900px] text-white rounded-b-md">{{ArrayImageSize}} <span class="text-xs">(MB)</span></p>
+<div class="w-[650px] flex space-x-2 h-10 ">
+    <p class="mt-1 ml-5 text-xl text-gray-500 mb-5 fontTextLike">Collection </p>
+    <img class="w-7 h-7 mt-1 animate__animated animate__jackInTheBox animate__repeat-1" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685346774/test/book_gmyxpg.png" alt="">
+</div>
+<div class="scrollImage w-[900px] h-[400px] grid grid-cols-5 gap-3 mx-auto">
+    <div *ngFor="let img of ObjectAccount.arrayImage;index as i" class="">
+        <div class="relative w-36 h-36 shellimage">
+            <img class="w-36 cursor-pointer h-36 rounded-xl setMainImage1" src="{{img}}" alt="">
+            <div class="flex setMainImage2 absolute">
+                <button (click)="setImage(img)" class="w-16 h-7 bg-gray-300 hover:bg-green-500 hover:text-white opacity-70 btn1">main</button>
+                <button (click)="removeImage(img)" class="w-16 h-7 bg-gray-300 hover:bg-red-500 hover:text-white opacity-70 btn2">remove</button>
+            </div>
+        </div>
+        
+    </div>
+</div>

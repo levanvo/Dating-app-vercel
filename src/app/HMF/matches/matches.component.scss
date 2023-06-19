@@ -1,0 +1,104 @@
+#volevan{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    // background-size: 100% 100%;
+    // background-image: url(https://res.cloudinary.com/darnprw0q/image/upload/v1686227590/test/4076949_aiob85.jpg);
+    background: #ffffff;
+}
+.formSelector{
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 20px;
+    z-index: -2;
+    transition: all 0.3s;
+    background: #f3f3f352;
+    border-radius: 10px;
+}
+.repoContact .formSelector{
+    position: absolute;
+    z-index: -4;
+}
+.shellImageUser:hover ~ .repoContact .formSelector{
+    top: -35px;
+    // left: 50%;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.shellImageUser ~ .repoContact .formSelector:hover{
+    top: -35px;
+    // left: 50%;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.shellImageUser{
+    overflow: hidden;
+}
+.imageUser{
+    transition: ease 0.2s;
+}
+.imageUser:hover{
+    transform: scale(1.2);
+    transition: ease 0.2s;
+}
+.shellUser:hover .imageUser{
+    transform: scale(1.2);
+}
+
+// Scroll board !
+.scrollMouse{
+    overflow-y: scroll;//get 20px for scroll
+}
+.nameUser{
+    font-size: 14px;
+}
+.infoUser3{
+    position: fixed;
+    z-index: -2;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    background: #bfbfbf3e;
+}
+// ===========================================
+.infoUser2{
+    opacity: 0;
+    z-index: -2;
+    position: absolute;
+    background: #ffffff;
+    width: 450px;
+    height: 550px;
+    top: 7%;
+    transform: scale(0);
+    border-radius: 10px;
+    left: 35%;
+    transition: ease-in 0.2s;
+}
+// ===========================================
+.infoUser1:checked ~ .infoUser2{
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1);
+    transition: ease-in 0.2s;
+}
+.infoUser1:checked ~ .infoUser3{
+    z-index: 1;
+    opacity: 1;
+}
+.infoReview{
+    border-top-left-radius: 40px;
+    background-size: 100% 100%;
+    background-image: url(https://res.cloudinary.com/darnprw0q/image/upload/v1686227589/test/4077297_gultoz.png);
+}
+.scrollReview{
+    overflow-y: scroll;
+}

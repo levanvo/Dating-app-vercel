@@ -1,0 +1,30 @@
+export interface ILogin{
+    id?:string|number,
+    name?:string,
+    age?:number,
+    email?:string,
+    emailcheck?:string,
+    pass?:string|number,
+    confirmpass?:string|number,
+    dateOfbirth?:string,
+    image?:string,
+    country?:string,
+    city?:string,
+    membersince?:string,
+    lastActive?:string|number,
+    message?:string,
+    describes?:string,
+    role?:string|number,
+    gender?:string,
+    status?:boolean,
+    arrayImage?:any,
+    switchLove?:any,
+    arrayFriend?:any,
+    arrayBeLike?:any,
+
+};
+export interface IFilter{
+    numberLager:number,
+    numberSmall:number,
+    gender:string,
+}

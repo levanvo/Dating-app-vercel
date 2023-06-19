@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Assingment2_WD17301'`, () => {
+  it(`should have as title 'internWK'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Assingment2_WD17301');
+    expect(app.title).toEqual('internWK');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Assingment2_WD17301 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('internWK app is running!');
   });
 });

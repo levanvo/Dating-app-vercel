@@ -1,0 +1,508 @@
+{
+  "users": [
+    {
+      "name": "Khánh Nam",
+      "email": "khanh@gmail.com",
+      "dateOfbirth": "2023-06-10",
+      "city": "Hà Giang",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX19aWoyYqWukvesBL/ROswBdL++y0uUzLNg=",
+      "encodePass": 12345678,
+      "confirmpass": "44tu",
+      "gender": "male",
+      "age": 40,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660572/test/325e71d87288bb07c868601495abf091_i9i5lf.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660572/test/325e71d87288bb07c868601495abf091_i9i5lf.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 1
+    },
+    {
+      "name": "Lê Văn Võ",
+      "email": "vole543215@gmail.com",
+      "dateOfbirth": "2000-03-02",
+      "city": "Thanh Hóa",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX18u8EULrRzpsvb3jDo+IvMy5judQM+1i5Q=",
+      "encodePass": 12345678,
+      "confirmpass": "12345.o",
+      "gender": "male",
+      "age": 23,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "Rất vui nếu ta bắt đầu một mối quan hệ tốt và lâu dài, nhỉ ?",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660651/test/20230424_174556_ogz3k5.jpg",
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg"
+      ],
+      "switchLove": [],
+      "arrayFriend": [
+        {
+          "status": 2,
+          "nameAccept": "Hoàng Thị Ngọc Bích",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660798/test/26b189de4fe1f2341483cd723c13f030_xrz4cy.webp",
+          "idAccept": 3,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        }
+      ],
+      "arrayBeLike": [
+        3
+      ],
+      "role": "",
+      "id": 2
+    },
+    {
+      "name": "Hoàng Thị Ngọc Bích",
+      "email": "ngocbich@gmail.com",
+      "dateOfbirth": "2003-06-25",
+      "city": "Hà nội",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX19v42ees09om2kfw9Px4Ldzs+99kPvGVnc=",
+      "encodePass": 12345678,
+      "confirmpass": "o.54321",
+      "gender": "female",
+      "age": 20,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660798/test/26b189de4fe1f2341483cd723c13f030_xrz4cy.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "Chào cậu, mình là Bích.",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660798/test/26b189de4fe1f2341483cd723c13f030_xrz4cy.webp"
+      ],
+      "switchLove": [
+        2,
+        6
+      ],
+      "arrayFriend": [
+        {
+          "status": 1,
+          "nameAccept": "Hoàng Thị Ngọc Bích",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660798/test/26b189de4fe1f2341483cd723c13f030_xrz4cy.webp",
+          "idAccept": 3,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        }
+      ],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 3
+    },
+    {
+      "name": "Đỗ Thu Cúc",
+      "email": "thucuc@gmail.com",
+      "dateOfbirth": "2001-07-07",
+      "city": "Quảng Ninh",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1+cfjuNJKcOVy9Mp3lclaom+0dNGh606Tc=",
+      "encodePass": 12345678,
+      "confirmpass": "qe.p0",
+      "gender": "female",
+      "age": 21,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660875/test/58f34499afd13f49387f3c25b49a964e_z50u4t.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660875/test/58f34499afd13f49387f3c25b49a964e_z50u4t.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 4
+    },
+    {
+      "name": "Trần Đức Mạnh",
+      "email": "manhduc@gmail.com",
+      "dateOfbirth": "2023-06-03",
+      "city": "Mao Khê",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1/CdO+JGH1ob+uzqb0wRl1LGMKODELJ8fU=",
+      "encodePass": 12345678,
+      "confirmpass": "13fc.0",
+      "gender": "male",
+      "age": 27,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660961/test/ab05cfcb876cf7758501efc4894279bd_hzgf7y.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686660961/test/ab05cfcb876cf7758501efc4894279bd_hzgf7y.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 5
+    },
+    {
+      "name": "Lê Bảo",
+      "email": "baobao@gmail.com",
+      "dateOfbirth": "2000-06-04",
+      "city": "Thanh Hóa",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX18xFIwL5hJDCc6XGiVuJuXpf3XHVrRJeaE=",
+      "encodePass": 12345678,
+      "confirmpass": "446y",
+      "gender": "male",
+      "age": 67,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661050/test/2f07b7b701506bb7dfca64d838974e58_tukrtz.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661050/test/2f07b7b701506bb7dfca64d838974e58_tukrtz.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [
+        3
+      ],
+      "role": "",
+      "id": 6
+    },
+    {
+      "name": "Lâm Khánh Huyền",
+      "email": "huyenkhanh@gmail.com",
+      "dateOfbirth": "2006-06-01",
+      "city": "Cầu Giấy",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1992Y6JAEhKOFSyfPPT4d4OhMkoUiinokk=",
+      "encodePass": 12345678,
+      "confirmpass": "cvok.09",
+      "gender": "female",
+      "age": 42,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661209/test/ai-art-MeaningJun-Midjourney-AI-face-women-bare-shoulders-2166503-wallhere.com_iebmpx.png",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661209/test/ai-art-MeaningJun-Midjourney-AI-face-women-bare-shoulders-2166503-wallhere.com_iebmpx.png"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 7
+    },
+    {
+      "name": "Nguyễn Minh Long",
+      "email": "longminh@gmail.com",
+      "dateOfbirth": "1999-06-05",
+      "city": "Hà Tĩnh",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1+nr454nsKuaPalLGbPxwk2PN3mpyn9F+U=",
+      "encodePass": 12345678,
+      "confirmpass": "gho0",
+      "gender": "male",
+      "age": 18,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661304/test/c1411d0db76ca3b5f6f8570936d59c2e_xjxcov.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661304/test/c1411d0db76ca3b5f6f8570936d59c2e_xjxcov.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 8
+    },
+    {
+      "name": "La Thị Tiên",
+      "email": "tientien@gmail.com",
+      "dateOfbirth": "2003-06-03",
+      "city": "Hà nội",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1/t6vpkvooIdin99WnfcFpdTen6b46Cy9M=",
+      "encodePass": 12345678,
+      "confirmpass": "oppa12",
+      "gender": "female",
+      "age": 20,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661396/test/f814acdfbc255df84580d3da472ef357_kiulzi.webp",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661396/test/f814acdfbc255df84580d3da472ef357_kiulzi.webp"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 9
+    },
+    {
+      "name": "Thu Thúy",
+      "email": "thuythuy@gmail.com",
+      "dateOfbirth": "2008-06-03",
+      "city": "Nha Trang",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX19/vS9JppDthIsZ0dKn1LJj9WY0bW9jnnU=",
+      "encodePass": 12345678,
+      "confirmpass": "okdi0",
+      "gender": "female",
+      "age": 23,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661529/test/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-05-05_221333_cyfjzb.png",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "Mình Là Thúy nhé.",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661529/test/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-05-05_221333_cyfjzb.png"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 10
+    },
+    {
+      "name": "Trần Ngọc Đăng",
+      "email": "ngocDang@gmail.com",
+      "dateOfbirth": "2002-06-25",
+      "city": "Bà Rịa-Vũng tàu",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX1/vdIxIlDnlsdKqskzkAT6GdtBp6+F4AXA=",
+      "encodePass": 12345678,
+      "confirmpass": "hihi.99",
+      "gender": "male",
+      "age": 57,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1686828992/test/midjourney_upscale_upbeta_adorable_penguin_in_leather_armor_0_517c9353-4e20-4b7d-a13e-e39e63ddf8bf-1024x1024_wazu4u.png",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686661825/test/1fe26946c40cdcbdc944a4add3523b48_cjhjku.webp",
+        "https://res.cloudinary.com/darnprw0q/image/upload/v1686828992/test/midjourney_upscale_upbeta_adorable_penguin_in_leather_armor_0_517c9353-4e20-4b7d-a13e-e39e63ddf8bf-1024x1024_wazu4u.png"
+      ],
+      "switchLove": [],
+      "arrayFriend": [],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 11
+    }
+  ],
+  "message": [
+    {
+      "idMain": 1,
+      "nameMain": "Khánh Nam",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 1
+    },
+    {
+      "idMain": 2,
+      "nameMain": "Lê Văn Võ",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [
+        {
+          "idConnect": 11,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686828992/test/midjourney_upscale_upbeta_adorable_penguin_in_leather_armor_0_517c9353-4e20-4b7d-a13e-e39e63ddf8bf-1024x1024_wazu4u.png",
+          "nameConnect": "Trần Ngọc Đăng",
+          "content": [
+            {
+              "idSendMessager": 11,
+              "writing": "Hello Vo nhe !"
+            },
+            {
+              "idSendMessager": 11,
+              "writing": "Hello Vo nhe !"
+            },
+            {
+              "idSendMessager": 11,
+              "writing": "Dạo này khỏe không bạn ?"
+            },
+            {
+              "idSendMessager": 2,
+              "writing": "Cảm ơn Đăng"
+            },
+            {
+              "idSendMessager": 2,
+              "writing": "Tôi vẫn khỏe nhé"
+            }
+          ]
+        },
+        {
+          "idConnect": 3,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660798/test/26b189de4fe1f2341483cd723c13f030_xrz4cy.webp",
+          "nameConnect": "Hoàng Thị Ngọc Bích",
+          "content": [
+            {
+              "idSendMessager": 2,
+              "writing": "Chào Bích nhé"
+            },
+            {
+              "idSendMessager": 3,
+              "writing": "Chào Võ"
+            }
+          ]
+        },
+        {
+          "idConnect": 9,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661396/test/f814acdfbc255df84580d3da472ef357_kiulzi.webp",
+          "nameConnect": "La Thị Tiên",
+          "content": [
+            {
+              "idSendMessager": 2,
+              "writing": ""
+            }
+          ]
+        }
+      ],
+      "id": 2
+    },
+    {
+      "idMain": 3,
+      "nameMain": "Hoàng Thị Ngọc Bích",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [
+        {
+          "idConnect": 2,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "nameConnect": "Lê Văn Võ",
+          "content": [
+            {
+              "idSendMessager": 2,
+              "writing": "Chào Bích nhé"
+            },
+            {
+              "idSendMessager": 2,
+              "writing": "Chào Bích nhé"
+            },
+            {
+              "idSendMessager": 3,
+              "writing": "Chào Võ"
+            }
+          ]
+        }
+      ],
+      "id": 3
+    },
+    {
+      "idMain": 4,
+      "nameMain": "Đỗ Thu Cúc",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 4
+    },
+    {
+      "idMain": 5,
+      "nameMain": "Trần Đức Mạnh",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 5
+    },
+    {
+      "idMain": 6,
+      "nameMain": "Lê Bảo",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 6
+    },
+    {
+      "idMain": 7,
+      "nameMain": "Lâm Khánh Huyền",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 7
+    },
+    {
+      "idMain": 8,
+      "nameMain": "Nguyễn Minh Long",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 8
+    },
+    {
+      "idMain": 9,
+      "nameMain": "La Thị Tiên",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [
+        {
+          "idConnect": 2,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "nameConnect": "Lê Văn Võ",
+          "content": [
+            {
+              "idSendMessager": 9,
+              "writing": ""
+            }
+          ]
+        }
+      ],
+      "id": 9
+    },
+    {
+      "idMain": 10,
+      "nameMain": "Thu Thúy",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 10
+    },
+    {
+      "idMain": 11,
+      "nameMain": "Trần Ngọc Đăng",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [
+        {
+          "idConnect": 2,
+          "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "nameConnect": "Lê Văn Võ",
+          "content": [
+            {
+              "idSendMessager": 11,
+              "writing": "Hello Vo nhe !"
+            },
+            {
+              "idSendMessager": 11,
+              "writing": "Dạo này khỏe không bạn ?"
+            },
+            {
+              "idSendMessager": 2,
+              "writing": "Cảm ơn Đăng"
+            },
+            {
+              "idSendMessager": 2,
+              "writing": "Tôi vẫn khỏe nhé"
+            }
+          ]
+        }
+      ],
+      "id": 11
+    }
+  ]
+}

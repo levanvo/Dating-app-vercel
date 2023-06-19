@@ -1,0 +1,147 @@
+<!-- ===================================================subHeader Login -->
+<div *ngIf="objectStatusUser==false" class="header relative">
+    <div class="header grid grid-cols-7 text-white">
+        <div class="col-span-3">
+            <h3 class="font-bold text-2xl mt-[10px] ml-24 dattingApp"><a routerLink="">Dating app</a></h3>
+        </div>
+        <form (ngSubmit)="onLogin()" class="flex space-x-5 col-span-4">
+            <div class="flex space-x-2">
+                <input name="email" [(ngModel)]="objectLogin.email"
+                    class="w-56 h-8 active:border active:border-sky-500 focus:shadow-inner focus:shadow-gray-500 rounded-sm my-auto pl-2 outline-0 text-gray-600 focus:shadow-inner shadow-gray-500"
+                    type="email" placeholder="Your email... ?">
+                <input name="pass" [(ngModel)]="objectLogin.pass"
+                    class="w-56 h-8 active:border active:border-sky-500 focus:shadow-inner focus:shadow-gray-500 rounded-sm my-auto pl-2 outline-0 text-gray-600 focus:shadow-inner shadow-gray-500"
+                    type="password" placeholder="Password... ?">
+            </div>
+            <button type="submit"
+                class="bg-orange-400 hover:bg-orange-500 active:bg-red-500 font-bold active:border-white active:border text-white border-2 border-white w-[109px] h-8 rounded-md my-auto">Login</button>
+        </form>
+    </div>
+    <h3 class="text-center bg-green-100 w-full text-red-500 font-medium  absolute z-10" *ngIf="ErrorLogin">
+        {{ErrorLogin}}</h3>
+
+    <!-- <marquee *ngIf="ErrorLogin" direction="right" class="text-center w-[500px] text-red-600 relative z-10 left-[500px]">{{ErrorLogin}}</marquee> -->
+</div>
+<!-- ===================================================Header -->
+<div *ngIf="objectStatusUser==true" class="header">
+    <div class="header grid grid-cols-7 text-white">
+        <div class="col-span-5 flex space-x-10">
+            <h3 class="font-bold text-2xl mt-[10px] ml-24 dattingApp"><a class="" routerLink="matches/{{takeOneUser.id}}">Dating app</a></h3>
+            <div class="flex space-x-5 my-auto">
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="matches/{{takeOneUser.id}}">Matches</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="list/{{takeOneUser.id}}">List</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="message/{{takeOneUser.id}}">Messages</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="error/{{takeOneUser.id}}">Errors</a></h3>
+            </div>
+        </div>
+        <div class="flex space-x-3 col-span-2 my-auto">
+            <div class="shellImage">
+                <img class="w-10 h-10 rounded-md border-2 border-white" src="{{takeOneUser.image}}" alt="">
+            </div>
+            <li class="text-green-500 my-auto"></li>
+            <div class="shellInfo flex">
+                <li class="shellout leading-10 text-gray-200"><a routerLink="matches/{{takeOneUser.id}}"><span
+                        class="text-white">{{takeOneUser.name}}</span></a>
+                    <ul>
+                        <a routerLink="manager/{{takeOneUser.id}}">
+                            <li class="mt-1">Manager</li>
+                        </a>
+                        <a routerLink="#">
+                            <li (click)="onLogout()" class="mt-1">Log-out</li>
+                        </a>
+                    </ul>
+                </li>
+                <span class="imagePF">&lt;</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================subMain register -->
+
+<div *ngIf="objectStatusUser==false" class="w-[1300px] h-[680px] bg-gray-50 mx-auto relative">
+    <input type="checkbox" id="inputFormControl" class="inputFormControlStart">
+    <!-- before click -->
+    <div class="w-[1300px] h-[510px] bg-gray-100 mx-auto formControlStart">
+        <h1 class=" text-center text-4xl font-medium mt-10">Find your match</h1>
+        <p class="text-center mt-2">Come on into view your matches ... all you need to do is sign up !</p>
+        <div class="flex space-x-5 justify-center mt-10 vooo">
+            <button
+                class="w-40 h-9 rounded-md duration-200 border border-gray-200 bg-gray-200 font-bold active:border-white active:border btnRegister">Register</button>
+            <button
+                class="w-40 h-9 rounded-md duration-200 border border-gray-200 bg-gray-200 hover:text-white hover:bg-sky-500 active:border-white active:border-4 font-bold">Learn
+                more</button>
+        </div>
+    </div>
+    <!-- affter click -->
+    <form class="w-[401px] mx-auto formRegister" (ngSubmit)="Register()">
+        <h2 class="text-center text-orange-500 text-2xl font-bold mb-5">Sign-up</h2>
+        <!-- gender -->
+        <div class="flex w-[400px] justify-center">
+            <h3 class="mr-5 font-bold">I am a: </h3>
+            <label class="text-sm my-auto">Male: <input class="" type="radio" required
+                    [(ngModel)]="objectsRegister.gender" name="gender" value="male"></label>
+            <div class="w-3"></div>
+            <label class="text-sm my-auto">Female: <input class="" type="radio" 
+                [(ngModel)]="objectsRegister.gender"
+                    name="gender" value="female"></label>
+        </div>
+        <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.gender=='false'">Please enter your gender</h3>
+        <!-- email,country,pass,vv... -->
+        <div class="">
+            <label><input type="text" name="name" [(ngModel)]="objectsRegister.name" placeholder="The name... ?" class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.name=='false'">Please enter your name !
+            </h3>
+            <!--  -->
+            <label><input type="email" name="email" [(ngModel)]="objectsRegister.email" placeholder="Email... ?" class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.email=='false'">Please enter your email !
+            </h3>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.emailcheck=='false'">Wrong - email !</h3>
+            <!--  -->
+            <label><input type="date" name="dateOfbirth" [(ngModel)]="objectsRegister.dateOfbirth"
+                    placeholder="Date of birth... ?" class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.dateOfbirth=='false'">Please enter your
+                birthday !</h3>
+            <!--  -->
+            <label><input type="text" name="city" [(ngModel)]="objectsRegister.city" placeholder="City... ?" class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.city=='false'">Please enter your city !
+            </h3>
+            <!--  -->
+            <label><input type="text" name="country" [(ngModel)]="objectsRegister.country" placeholder="Country... ?"
+                    class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.country=='false'">Please enter your
+                country !</h3>
+            <!--  -->
+            <label><input type="password" name="pass" [(ngModel)]="objectsRegister.pass" placeholder="Password... ?"
+                    class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.pass=='false'">Please enter your password
+                !</h3>
+            <!--  -->
+            <label><input type="password" name="confirmpass" [(ngModel)]="objectsRegister.confirmpass"
+                    placeholder="Confirm password... ?" class="w-[400px] text-center outline-0 border-2 border-gray-200 focus:shadow-inner shadow-gray-500
+            shadow-inner focus:shadow-gray-500 rounded-md mb-2 h-10"></label><br>
+            <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.confirmpass=='false'">Please enter your
+                confirm password !</h3>
+            <!--  -->
+        </div>
+        <div class="flex justify-center space-x-5">
+            <button
+                class="w-40 h-9 rounded-md duration-200 border border-gray-200 hover:text-white hover:bg-green-500 font-bold">Register</button>
+            <button (click)="Cancel()"
+                class="w-40 h-9 rounded-md duration-200 border border-gray-200 hover:text-white hover:bg-red-400 font-bold">Cancle</button>
+        </div>
+    </form>
+    <label for="inputFormControl"></label>
+</div>
+<!-- ===================================================Main -->
+<div *ngIf="objectStatusUser==true" class="w-[1300px] h-[0px] mx-auto ">
+    <div class="h-7"></div>
+    <router-outlet />
+</div>
+<!-- <router-outlet/> -->

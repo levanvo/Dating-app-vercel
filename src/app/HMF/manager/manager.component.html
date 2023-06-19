@@ -1,0 +1,40 @@
+
+<div class="flex w-[1300px] space-x-10 -mt-2">
+    <div class="w-[300px] h-[88vh] rounded-md siuuuuu">
+        <div class="image rounded-md mb-1">
+            <img class="w-[250px] h-[250px] ml-[25px] mt-4 mr-4 rounded-md" src="{{InfoUser.image}}" alt="">
+        </div>
+        <div class="text-center">
+            <h2 class="text-2xl text-gray-500 font-bold">{{InfoUser.name}} <span class="text-sm font-medium">- ({{InfoUser.gender}})</span></h2>
+            <a class="" href="mailto:volvph19721@fpt.edu.vn"><h2 class="hover:text-red-500 text-sm text-sky-500 font-normal mb-1">{{InfoUser.email}}</h2></a>
+            <!--  -->
+            <h2 class=" font-medium">Birthday:</h2>
+            <p class="text-sm text-center">{{InfoUser.dateOfbirth}}</p>
+            <br>
+            <h2 class=" font-medium">Location:</h2>
+            <p class="text-sm text-center">{{InfoUser.city}} - {{InfoUser.country}}</p>
+            <br>
+            <h2 class=" font-medium">Age:</h2>
+            <p class="text-sm text-center ">{{InfoUser.age}} <span class="text-xs text-sky-500"> (year old)</span></p>
+            <br>
+            <h2 class=" font-medium">Last Active:</h2>
+            <p class="text-sm text-center">{{InfoUser.lastActive}} seconds ago</p>
+            <br>
+            <h2 class=" font-medium">Member Since:</h2>
+            <p class="text-sm text-center">{{InfoUser.memberSice}} seconds ago</p>
+        </div>
+    </div>
+    <div class="w-[960px] h-[88vh] rounded-md siuuuuu">
+        <!-- <h1 class="text-center text-gray-600 font bold text-2xl">Management</h1> -->
+        <div class="flex space-x-10 justify-center bg-orange-500 rounded-t-lg text-white">
+            <a class="hover:text-white focus:font-bold" routerLink="information/{{InfoUser.id}}">
+                <h3 class="text-lg hover:scale-110 ">Information</h3>
+            </a>
+            <a class="hover:text-white focus:font-bold"  routerLink="yourImages/{{InfoUser.id}}">
+                <h3 class="text-lg hover:scale-110 ">Images</h3>
+            </a>
+        </div>
+        <hr>
+        <router-outlet/>
+    </div>
+</div>
