@@ -1,0 +1,33 @@
+<!-- name,email,pass,repass -->
+<div class="w-[1200px] mx-auto h-[500px] bg-gray-100 mt-10 flex space-x-10">
+    <form (ngSubmit)="OnSign_up()" class="w-[550px] hover:shadow-xl shadow-gray-200 shadow-xl duration-200 hover:shadow-gray-500 h-[460px] rounded-md m-5 border border-gray-200 relative">
+        <h1 class="text-center -top-[17px] text-md leading-8 bg-gray-500 text-white w-44 h-8 rounded-2xl absolute">Sign-up</h1>
+        <br>
+        <br>
+        <p class="text-center text-orange-500">Name</p>
+        <input type="text" [(ngModel)]="DataSign_up.name" name="name" placeholder=" ...name ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <p class="text-center text-orange-500">Email</p>
+        <input type="email" [(ngModel)]="DataSign_up.email" name="email" placeholder=" ...email ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <p class="text-center text-orange-500">Password</p>
+        <input type="password" [(ngModel)]="DataSign_up.pass" name="pass" placeholder=" ...password ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <p class="text-center text-orange-500">Re-pass</p>
+        <input type="password" [(ngModel)]="DataSign_up.repass" name="repass" placeholder=" ...re-pass ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <div class="flex justify-center">
+            <button class="w-44 h-10 bg-blue-500 text-white active:scale-90 duration-200 text-center font-bold mt-7">Sign-up</button>
+        </div>
+    </form>
+    <form (ngSubmit)="OnSign_in()" class="w-[550px] hover:shadow-xl shadow-gray-200 shadow-xl duration-200 hover:shadow-gray-500 border border-gray-200 h-[460px] rounded-md m-5 relative ">
+        <h1 class="text-center -top-[17px] text-md leading-8 bg-gray-500 text-white w-44 h-8 rounded-2xl absolute">Sign-in</h1>
+        <br>
+        <br>
+        <p class="text-center text-orange-500">Email</p>
+        <input type="email" [(ngModel)]="DataSign_in.email" name="email" placeholder=" ...email ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <p class="text-center text-orange-500">Password</p>
+        <input type="password" [(ngModel)]="DataSign_in.pass" name="pass" placeholder=" ...password ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <p class="text-center text-orange-500">Re-pass</p>
+        <input type="password" [(ngModel)]="DataSign_in.repass" name="repass" placeholder=" ...re-pass ?" class="w-[500px] h-10 outline-0 pl-2 ml-6 text-center shadow-inner shadow-gray-500">
+        <div class="flex justify-center">
+            <button class="w-44 h-10 bg-blue-500 text-white active:scale-90 duration-200 text-center font-bold mt-7">Sign-in</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="w-[100%] h-[460px] relative">
+        <img class="w-[100vw] h-[460px] " src="https://c.wallhere.com/photos/a7/3c/Monika_Jagaciak_women_model-795487.jpg!d" alt="">
+        <div class="absolute left-[30%] top-[28%]">
+            <h2 class=" text-6xl font-bold text-white">Collection</h2>
+            <h3 class=" text-4xl -ml-[10%] mt-2 text-gray-500">Home / Shop - Categories</h3>
+        </div>
+    </div>
+    <div class="w-[1450px] mx-auto mt-10 flex space-x-10">
+        <div class="w-[410px] ">
+            <div class=" h-[400px] border border-gray-100">
+                <h1 class="text-center text-gray-600 font-bold text-xl bg-gray-100 p-1">List products</h1>
+                
+                <div class="scrollCt h-[360px] shadow-inner shadow-gray-300 text-center">
+                    <button (click)="ShowAll()" class="w-56 h-8 bg-gray-500 rounded-b-full mt-5 active:scale-90 duration-100 text-white">All</button>
+                    <div *ngFor="let show of DataCategories; index as i">
+                        <button (click)="CategoryPr(show._id)" class="w-56 h-8 bg-gray-500 rounded-b-full mt-5 active:scale-90 duration-100 text-white">{{show.nameList}}</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class=" h-[400px] border border-gray-100">
+                <div class="scrollCt h-[360px] shadow-inner shadow-gray-300 text-center">
+                    <button (click)="ShowAll()" class="w-56 h-8 bg-gray-400 rounded-b-full mt-5 active:scale-90 duration-100 text-white">All</button>
+                    <div *ngFor="let show of DataCategories; index as i">
+                        <button (click)="CategoryPr(show._id)" class="w-56 h-8 bg-gray-400 rounded-b-full mt-5 active:scale-90 duration-100 text-white">{{show.nameList}}</button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="w-[410px] mt-5">
+                <img class="w-[410px] h-[600px]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686299837/img_assigment/900x525-01_ibzrhy.png" alt="">
+            </div> -->
+        </div>
+
+        <div class="w-[1010px] relative">
+            <p class="text-lg ml-5 text-red-500">Chain of exclusive distribution stores</p>
+            <img class="w-[1010px] h-[300px]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686299567/img_assigment/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-06-03_101150_iwgcjn.png" alt="">
+            <p *ngIf="numberSwitch==false" class="text-xl text-gray-500">List: <span class="text-green-500">{{inFoCT.nameList}}</span></p>
+            <p *ngIf="numberSwitch==true" class="text-xl text-gray-500">List: <span class="text-green-500">all Products</span></p>
+            <div class=" bg-gray-100 mt-10 scrollAll h-[600px]">
+                <div *ngIf="numberSwitch==true" class="grid grid-cols-5 gap-5">
+                    <div *ngFor="let show of DataProducts">
+                        <div class="w-44 h-44 col-span-1 m-1">
+                            <a href="details/{{show._id}}" class="">
+                                <img class="w-[170px] h-44 rounded-md m-2" src={{show.image}} alt="">
+                                <p class="text-center">{{show.name}}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="numberSwitch==false" class="grid grid-cols-5 gap-5">
+                    <div *ngFor="let show of DataProducts_CT">
+                        <div class="w-44 h-44 col-span-1 m-1">
+                            <a href="details/{{show._id}}" class="">
+                                <img class="w-[170px] h-44 rounded-md" src={{show.image}} alt="">
+                                <p class="text-center">{{show.name}}</p>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div *ngIf="DataProducts_CT.length==0" class="absolute left-[30%] top-[55%]">
+                        <p class="text-green-500">Oh sorry !, We will update the goods as soon as possible</p>
+                        <img class="opacity-30 w-44 h-44 ml-[20%]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686560185/img_assigment/empty-box_v0bfp0.png" alt="">
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

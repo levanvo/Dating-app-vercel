@@ -1,0 +1,37 @@
+table,th,tr,td{
+    border: 1px solid gray;
+}
+.scrollManager{
+    overflow: scroll;
+}
+.scrollManager::-webkit-scrollbar{
+    width: 10px;
+}
+.scrollManager::-webkit-scrollbar-thumb{
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.n{border: none;}
+.formAddPr,.imgAddnew{
+    top: -50px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+#addnew:checked ~ .formAddPr{
+    opacity: 1;
+    z-index: 2;
+    transition: all 0.3s;
+}
+.UDform{
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+#checkUD:checked ~ .UDform{
+    opacity: 1;
+    z-index: 5;
+    transition: all 0.3s;
+}

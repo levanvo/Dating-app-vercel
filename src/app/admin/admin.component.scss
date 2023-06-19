@@ -1,0 +1,30 @@
+.lamp{
+    animation: lamp 200s infinite alternate;
+}
+@keyframes lamp{
+    50%{
+        transform: rotate(1000deg);
+    }
+}
+.lightlamp{box-shadow: 0 0 10px 1px white;}
+.scrollManager{
+    overflow-y: scroll;
+}
+.scrollManager::-webkit-scrollbar{
+    width: 10px;
+}
+.scrollManager::-webkit-scrollbar-thumb{
+    background: rgb(254, 254, 254);
+    border-radius: 10px;
+}
+.ok2{
+    opacity: 0;
+    z-index: -1;
+    overflow-y: scroll;
+    top: 10%;
+    left: 60%;
+}
+#ok:checked ~ .ok2{
+    opacity: 1;
+    z-index: 1;
+}

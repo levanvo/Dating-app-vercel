@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <div class="w-[100%] h-[460px] relative">
+        <img class="w-[100vw] h-[460px] " src="https://img.freepik.com/premium-photo/woman-s-hand-is-small-empty-metal-trolley-from-supermarket-banner-buyer-close-up_262708-3682.jpg?w=2000" alt="">
+        <div class="absolute left-[50%] top-[28%]">
+            <h2 class=" text-6xl font-bold text-white">Cart</h2>
+            <h3 class=" text-xl -ml-[35%] mt-2 text-gray-100">Control your cart and checkout here</h3>
+        </div>
+    </div>
+    <div class="cart mt-5 w-[1350px] flex space-x-10 mx-auto">
+        <div *ngIf="UserAddCart.length>0" class="w-[960px] h-[500px] bg-orange-100 rounded-sm grid grid-cols-4 scrollCart">
+            <div *ngFor="let showPr of UserAddCart; index as vole">
+                <form (change)="ValueDola($event, showPr)" class="w-[200px] col-span-1 h-[290px] rounded-md mx-auto mt-5 mb-5 bg-orange-200">
+                    <button (click)="removeCart(showPr._id)" class="h-5 w-5 ml-[90%]">
+                        <img class="h-5 w-5 hover:rotate-90 duration-100" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686487507/img_assigment/close_f7emko.png" alt="">
+                    </button>
+                    <img class="w-[170px] h-[180px] rounded-lg mx-auto" src={{showPr.image}} alt="">
+                    <p class="text-center font-medium text-gray-600 text-lg">{{showPr.name}}</p>
+                    <div class="flex space-x-1 justify-center mt-2">
+                        <p class="text-orange-500">${{showPr.price}}</p>
+                        <p>-</p>
+                        <input type="number" value="0" name="{{showPr._id}}" min="1" max={{showPr.quantity}} class="pl-2 w-24 outline-0 rounded-md" placeholder=" ... ?">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1 ml-2">There's only: {{showPr.quantity}}</p>
+                </form>
+            </div>
+        </div>
+        <div *ngIf="UserAddCart.length==0" class="w-[960px] h-[500px] bg-gray-100">
+            <img class="w-56 h-56 m-auto mt-[10%]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686560185/img_assigment/empty-box_v0bfp0.png" alt="">
+            <p class="text-red-400 font-bold text-4xl text-center">Shopping now !!!</p>
+        </div>
+        <div class="w-[350px] h-[500px] bg-gray-100 rounded-sm">
+            <p class="text-center text-2xl text-gray-500 font-bold underline text-red-400">Payments</p>
+
+            
+            <p class="ml-2 mt-5">Total product selected: <span class="text-green-500">{{UserAddCart.length}} (SP)</span></p>
+            <p class="ml-2 mt-3">Total Payable: <span class="text-red-500">${{ArrayTotalPay}}</span></p>
+            <p class="ml-2 mt-3">Your pay-method:</p>
+            <div class="flex justify-center mt-5">
+                <button (click)="ResultPay()" class="w-44 h-9 bg-gray-700 text-white font-bold active:scale-90 duration-100">Pay</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

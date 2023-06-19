@@ -1,0 +1,10 @@
+.scrollCt,.scrollAll{
+    overflow-y: scroll;
+}
+.scrollCt::-webkit-scrollbar,.scrollAll::-webkit-scrollbar{
+    width: 10px;
+    
+}
+.scrollCt::-webkit-scrollbar-thumb,.scrollAll::-webkit-scrollbar-thumb{
+    background: rgb(226, 226, 226);border-radius: 53px;
+}

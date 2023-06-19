@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body class="relative">
+    <div class="flex justify-between relative">
+        <h2 class="font-bold text-gray-500">Products list: ({{DataProducts.length}})</h2>
+        <input type="checkbox" id="addnew" hidden>
+        <button class="active:scale-90 "><label for="addnew" class="font-medium cursor-pointer text-gray-600  pl-5 pr-5 border border-gray-500">Add new</label></button>
+        <form (ngSubmit)="OnAddPr()" class="w-[650px] h-[550px] bg-gray-800 absolute formAddPr rounded-md" >
+            <h1 class="text-center text-2xl text-white">Add Products</h1><hr>
+            <div class="flex mt-1">
+                <div class="leftInfo">
+                    <p class="ml-1 text-green-500">Name:</p>
+                    <input type="text" [(ngModel)]="ObjectProducts.name" name="name" placeholder="... name ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                    <p class="ml-1 text-green-500">Price:</p>
+                    <input type="number" [(ngModel)]="ObjectProducts.price" name="price" placeholder="... price ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                    <p class="ml-1 text-green-500">Quantity:</p>
+                    <input type="number" [(ngModel)]="ObjectProducts.quantity" name="quantity" placeholder="... quantity ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                    <p class="ml-1 text-green-500" name="categoryID">Category:</p>
+                    <select class=" h-10 w-[400px] ml-[25px] outline-0  shadow-inner shadow-gray-500" [(ngModel)]="ObjectProducts.categoryID" name="categoryID">
+                        <option value="">Choose list !</option>
+                        <option *ngFor="let show of DataCategory" value={{show._id}}>{{show.nameList}}</option>
+                    </select>
+                </div>
+                <div class="rightImage">
+                    <input type="file" (change)="HandleImage($event)" class="w-[185px] cursor-pointer h-[233px] border border-red-500 ml-5 mt-6">
+                </div>
+            </div>
+            <p class="text-white ml-1 text-green-500">Description:</p>
+            <textarea [(ngModel)]="ObjectProducts.description" name="description" class="w-[600px] shadow-inner shadow-gray-500 ml-[25px] h-[150px] outline-0 pt-1 pl-2 pr-2" placeholder="... content"></textarea>
+            <div class="flex justify-center">
+                <button class="w-44 h-8 bg-white mt-4 active:scale-90 duration-100">Add</button>
+            </div>
+        </form>
+       <!-- <label for="addnew" class="" ><img class="w-7 h-7 top-96 absolute" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685516561/test/cancel_q1i46b.png" alt=""></label> -->
+    </div>
+    <div class="w-[960px] h-[564px] bg-sky-200 scrollManager ">
+        <table class="text-center w-[100vw] rounded-md overflow-hidden">
+            <thead>
+                <tr class="bg-black text-white font-medium">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>List</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+
+            <tbody class="">
+                <tr *ngFor="let show of DataProducts; index as i" class="hover:bg-gray-500 cursor-pointer  hover:text-white" title={{show.name}}>
+                    <td>{{i+1}}</td>
+                    <td>{{show.name}}</td>
+                    <td class=""><img class="w-36 h-16 mx-auto rounded-md" src={{show.image}} alt=""></td>
+                    <td><span class="text-red-500">$</span>{{show.price}}</td>
+                    <td>{{show.quantity}}</td>
+                    <td>{{show.description}}</td>
+                    <td>{{show.categoryID}}</td>
+                    <td class="flex justify-center space-x-1 n">
+                        <button (click)="RemovePr(show._id)" class="w-24 mt-4 h-8 bg-red-400 active:scale-90 duration-100 active:bg-red-500 text-white">Remove</button>
+                        <input type="checkbox" id="checkUD" hidden>
+                        <label for="checkUD" (click)="UpdatePr1(show._id)" class="w-24 mt-4 h-8 bg-blue-400 cursor-pointer active:scale-90 duration-100 active:bg-blue-500 text-white leading-8">Update</label>
+                        <form (ngSubmit)="UpdatePr2()" class="w-[650px] h-[550px] bg-gray-800 absolute text-black UDform rounded-md" >
+                            <h1 class="text-center text-2xl text-white">Update Products</h1><hr>
+                            <div class="flex mt-1">
+                                <div class="leftInfo">
+                                    <p class="ml-1 text-green-500">Name:</p>
+                                    <input type="text" [(ngModel)]="ObjectUDProducts.name" name="name" placeholder="... name ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                                    <p class="ml-1 text-green-500">Price:</p>
+                                    <input type="number" [(ngModel)]="ObjectUDProducts.price" name="price" placeholder="... price ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                                    <p class="ml-1 text-green-500">Quantity:</p>
+                                    <input type="number" [(ngModel)]="ObjectUDProducts.quantity" name="quantity" placeholder="... quantity ?" class="outline-0 ml-[25px] shadow-inner pl-2 h-10 w-[400px] shadow-gray-500">
+                                    <p class="ml-1 text-green-500" name="categoryID">Category:</p>
+                                    <select class=" h-10 w-[400px] ml-[25px] outline-0  shadow-inner shadow-gray-500" [(ngModel)]="ObjectUDProducts.categoryID" name="categoryID">
+                                        <option value="" selected>Choose list !</option>
+                                        <!-- <option value={{ObjectUDProducts.categoryID._id}} selected>{{ObjectUDProducts.categoryID.nameList}}</option> -->
+                                        <option *ngFor="let show of DataCategory" value={{show._id}}>{{show.nameList}}</option>
+                                    </select>
+                                </div>
+                                <div class="rightImage">
+                                    <input type="file" (change)="HandleImage($event)" class="w-[185px] cursor-pointer h-[233px] border border-red-500 ml-5 mt-6">
+                                </div>
+                            </div>
+                            <p class="text-white ml-1 text-green-500">Description:</p>
+                            <textarea [(ngModel)]="ObjectUDProducts.description" name="description" class="w-[600px] shadow-inner shadow-gray-500 ml-[25px] h-[150px] outline-0 pt-1 pl-2 pr-2" placeholder="... content"></textarea>
+                            <div class="flex justify-center">
+                                <button class="w-44 h-8 bg-white mt-4 active:scale-90 font-bold duration-100">Update</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
