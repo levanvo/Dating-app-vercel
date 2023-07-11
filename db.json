@@ -237,7 +237,7 @@
       "id": 8
     },
     {
-      "name": "La Thị Tiên",
+      "name": "Lê Thị Thơm",
       "email": "tientien@gmail.com",
       "dateOfbirth": "2003-06-03",
       "city": "Hà nội",
@@ -374,7 +374,7 @@
         {
           "idConnect": 9,
           "imageConnect": "https://res.cloudinary.com/darnprw0q/image/upload/v1686661396/test/f814acdfbc255df84580d3da472ef357_kiulzi.webp",
-          "nameConnect": "La Thị Tiên",
+          "nameConnect": "Lê Thị Thơm",
           "content": [
             {
               "idSendMessager": 2,
@@ -449,7 +449,7 @@
     },
     {
       "idMain": 9,
-      "nameMain": "La Thị Tiên",
+      "nameMain": "Lê Thị Thơm",
       "imageMain": "https://picsum.photos/300",
       "buddy": [
         {
