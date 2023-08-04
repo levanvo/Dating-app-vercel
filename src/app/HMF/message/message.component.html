@@ -19,20 +19,49 @@
             <div class="h-[469px] scrollListMessage">
                 <div *ngFor="let show of InforMessage.content">
                     <!-- người gửi -->
-                    <div *ngIf="show.idSendMessager==AccountMessage.id" class="flex space-x-2 mb-2">
+                    <div *ngIf="show.idSendMessager==AccountMessage.id" class="flex space-x-2 mb-2 ml-2 mt-1">
                         <img class="w-8 h-8 rounded-md" src={{AccountMessage.image}} alt="">
-                        <p class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show.writing}}</p>
+                        <div class="">
+                            <p class="text-gray-400 text-sm">Bạn</p>
+                            <div class="flex space-x-1">
+                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show?.writing}}</p>
+                                <p *ngIf="show.writing" class="text-xs text-gray-300 mt-[14px]">{{show?.time}}</p>
+                            </div>
+                            <div class="flex">
+                                <img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm">
+                                <p *ngIf="show.imageSend" class="text-xs text-gray-300 mt-2">{{show?.time}}</p>
+                            </div>
+                        </div>
                     </div>
                     <!-- người nhận -->
-                    <div *ngIf="show.idSendMessager==UserMessage.id" class="flex space-x-2 mb-2">
+                    <div *ngIf="show.idSendMessager==UserMessage.id" class="flex space-x-2 mb-2 ml-2 mt-1">
                         <img class="w-8 h-8 rounded-md" src={{InforMessage.imageConnect}} alt="">
-                        <p class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show.writing}}</p>
+                        <div class="">
+                            <p class="text-gray-400 text-sm">{{InforMessage.nameConnect}}</p>
+                            <div class="flex space-x-1">
+                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show?.writing}}</p>
+                                <p *ngIf="show.writing" class="text-xs text-gray-300 mt-[14px]">{{show?.time}}</p>
+                            </div>
+                            <div class="flex">
+                                <img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm">
+                                <p *ngIf="show.imageSend" class="text-xs text-gray-300 mt-2">{{show?.time}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <form (ngSubmit)="SendMessage(UserMessage.id)" class="flex space-x-1 justify-center">
-                <input [(ngModel)]="contentMessage.writing" name="writing" type="text" class="w-[600px] h-10 outline-0 pl-2 pr-2 shadow-inner shadow-gray-400 rounded-l-md" placeholder=" Writing ...">
-                <button class="w-36 h-10 bg-gray-600 text-white rounded-r-md active:scale-90 duration-100">Send</button>
+                <input [(ngModel)]="contentMessage.writing" name="writing" type="text" class="w-[600px] h-10 outline-0 pl-2 pr-2 shadow-inner shadow-gray-400 rounded-md" placeholder=" Writing ...">
+                <div class="ShellFileImage border rounded-xl h-10 scale-90 hover:scale-100 duration-100">
+                    <img class="w-14 h-10 pl-1 pt-[2px]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687351616/img_assigment/photo_paplde.png" alt="">
+                    <input type="file" (change)="OnchangeImage($event)" class=" fileImageSend">
+                </div>
+                <button class="w-24 h-10 btn_send text-white rounded-full img_send active:scale-90 duration-100">
+                    <img class="w-8 h-8 mx-auto duration-200" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687353614/img_assigment/send_sttz9v.png" alt="">
+                </button>
+                <!-- <button *ngIf="alittleCss==true" class="w-24 h-10 btn_send text-white rounded-full  active:scale-90 duration-100">
+                    <img class="w-8 h-8 mx-auto img_send2" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687353614/img_assigment/send_sttz9v.png" alt="">
+                </button> -->
             </form>
         </div>
     </div>

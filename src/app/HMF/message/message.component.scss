@@ -1,16 +1,47 @@
-.messages{
+.messages {
     background-image: url(https://res.cloudinary.com/darnprw0q/image/upload/v1686227590/test/4076929_dmco11.png);
     background-size: 100% 100%;
 }
-.scrollListMessage{
+
+.scrollListMessage {
     overflow-y: scroll;
 }
-.scrollListMessage::-webkit-scrollbar{
+
+.scrollListMessage::-webkit-scrollbar {
     width: 10px;
 }
-.scrollListMessage::-webkit-scrollbar-thumb{
+
+.scrollListMessage::-webkit-scrollbar-thumb {
     background-color: rgb(176, 176, 176);
     border-radius: 10px;
 }
-.leftMessage{border-bottom-left-radius: 5px;}
-.rightMessage{border-bottom-right-radius: 5px;}
+
+.leftMessage {
+    border-bottom-left-radius: 5px;
+}
+.img_send:hover img{transform: rotate(45deg);}
+// .img_send2{transform: rotate(45deg);}
+.btn_send{
+    background: #ffffff;
+    border: 1px solid blue;
+}
+.rightMessage {
+    border-bottom-right-radius: 5px;
+}
+
+.fileImageSend[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.ShellFileImage {
+    position: relative;
+    display: inline-block;
+    // background-image: url(https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80);
+    // background-size: 100% 100%;
+}
