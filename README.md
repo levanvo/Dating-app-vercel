@@ -1,5 +1,5 @@
 Guide:
-  *************link: https://dating-app-vercel.vercel.app/ (link-OK--->come to explore now !!)
+  *************link: https://dating-app-vercel.vercel.app/ (link error-haizz... but you can see !!)
   
 In future:
   1. Continue to perfect the small details.
