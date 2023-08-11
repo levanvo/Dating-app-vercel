@@ -107,17 +107,17 @@
                         <div class="">
                             <p class="font-medium">4.Date of birthday:</p>
                             <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="date"
-                            [(ngModel)]="ObjectAccount.dateOfBirthday" name="dateOfBirthday">
-                            <p class="text-red-500 text-xs" *ngIf="ObjectAccount.dateOfBirthday==''">4.dateOf-birthday ?</p>
+                            [(ngModel)]="ObjectAccount.dateOfbirth" name="dateOfbirth">
+                            <p class="text-red-500 text-xs" *ngIf="ObjectAccount.dateOfbirth==''">4.dateOf-birthday ?</p>
                         </div>
                     </div>
                     <!-- Age,city,country -->
                     <div class="flex justify-center space-x-[26px]">
                         <div class="">
                             <p class="font-medium">5.Age:</p>
-                            <input class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="number"
+                            <input disabled class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="number"
                                [(ngModel)]="ObjectAccount.age" name="age" placeholder="... age ?">
-                            <p class="text-red-500 text-xs" *ngIf="ObjectAccount.age==''">5.age ?</p>
+                            <!-- <p class="text-red-500 text-xs" *ngIf="ObjectAccount.age==''">5.age ?</p> -->
                         </div>
                         <div class="">
                             <p class="font-medium">6.City:</p>
@@ -140,7 +140,7 @@
                         <p class="text-red-500 text-xs" *ngIf="ObjectAccount.describes==''">8.describes ?</p>
                     </div>
                     <div class="flex justify-center ">
-                        <button class="w-44 mt-2 h-8 bg-gray-500 hover:bg-gray-700 text-white">Ok</button>
+                        <button class="w-44 mt-2 h-8 bg-gray-500 hover:bg-gray-700 text-white">Accept</button>
                     </div>
                 </form>
             </div>

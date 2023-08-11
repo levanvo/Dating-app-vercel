@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ServiceService } from 'src/app/Services/services.service';
 import { IFilter, ILogin } from 'src/app/typeUser';
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-matches',
   templateUrl: './matches.component.html',
@@ -14,7 +13,7 @@ export class MatchesComponent {
   AllUser: ILogin[] = [];//All Users
   ArrayFilter: ILogin[] = [];//All Users
   // ObjectUserFriend: any = {};// User Belike
-
+  Message = "";
   objectFilter: IFilter = {
     numberSmall: 17,
     numberLager: 70,
@@ -35,6 +34,10 @@ export class MatchesComponent {
         this.ObjectOwner = data;
       });
     });
+    // ========================================test Dotnet
+    // this.controlUser.test().subscribe((dataTest:any)=>{
+    //   console.log(dataTest);
+    // });
   };
   // show filter find
   onFilter() {
@@ -45,9 +48,23 @@ export class MatchesComponent {
         this.ArrayFilter = this.AllUser.filter((item: any) => item.gender == this.objectFilter.gender && item.age >= this.objectFilter.numberSmall && item.age <= this.objectFilter.numberLager);
       };
       if (this.objectFilter.gender == "All") {
-        this.ArrayFilter = this.AllUser.filter((item:any)=>item.age >= this.objectFilter.numberSmall && item.age <= this.objectFilter.numberLager);
+        this.ArrayFilter = this.AllUser.filter((item: any) => item.age >= this.objectFilter.numberSmall && item.age <= this.objectFilter.numberLager);
       };
     });
+  };
+  onResetFilter() {
+    if (this.objectFilter.numberSmall == 17 &&
+      this.objectFilter.numberLager == 70 &&
+      this.objectFilter.gender == "All") {
+      this.Message = "Nothing reset !";
+      setTimeout(() => {
+        this.Message = "";
+      }, 2000);
+    };
+    this.objectFilter.numberSmall = 17;
+    this.objectFilter.numberLager = 70;
+    this.objectFilter.gender = "All";
+    this.ArrayFilter = this.AllUser.filter((item: any) => item.age >= this.objectFilter.numberSmall && item.age <= this.objectFilter.numberLager);
   };
   // set switch like and unlike
   Notification = 0;

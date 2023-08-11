@@ -71,29 +71,34 @@ export class InformationComponent {
       }
     }
   }
-  ErrorInfo:any={
-    emailCheck:"",
+  ErrorInfo: any = {
+    emailCheck: "",
   }
   OnChangeInfo() {
-    const endEmail="@gmail.com";
-    if(
-      this.ObjectAccount.name!="" &&
-      this.ObjectAccount.age!="" &&
-      this.ObjectAccount.gender!="" &&
-      this.ObjectAccount.city!="" &&
-      this.ObjectAccount.country!="" &&
-      this.ObjectAccount.email!="" &&
-      this.ObjectAccount.dateOfBirthday!="" &&
-      this.ObjectAccount.describes!=""
-    ){
-      if(this.ObjectAccount.email.includes(endEmail)){
+    const endEmail = "@gmail.com";
+    if (
+      this.ObjectAccount.name != "" &&
+      this.ObjectAccount.gender != "" &&
+      this.ObjectAccount.city != "" &&
+      this.ObjectAccount.country != "" &&
+      this.ObjectAccount.email != "" &&
+      this.ObjectAccount.dateOfbirth != "" &&
+      this.ObjectAccount.describes != ""
+    ) {
+      if (this.ObjectAccount.email.includes(endEmail)) {
+        const nowDay = new Date();
+        let nowYear = nowDay.getFullYear();
+        let getYourAge = Number(this.ObjectAccount.dateOfbirth.slice(0, 4));
+        this.ObjectAccount.age=nowYear-getYourAge;
         this.controlUser.updateUser(this.ObjectAccount).subscribe();
         alert("Update your info successfully !");
         location.reload();
-      }else{
-        this.ErrorInfo.emailCheck="false";
+      } else {
+        this.ErrorInfo.emailCheck = "false";
       };
     };
+    // console.log(this.ObjectAccount.dateOfbirth);
+
   };
 };
 // const encryptedText = CryptoJS.AES.encrypt('Hello, World!', 'vole').toString();

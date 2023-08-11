@@ -6,7 +6,7 @@
         </div>
         <div class="scrollMouse h-[70vh]">
             <div class=" scrollEmotionPeople " *ngFor="let showLike of AllUserliked" >
-                <a routerLink="" class="w-[500px] h-20 flex space-x-3 justify-center mx-auto mt-2 rounded-full"><div class="w-[500px] h-20 flex space-x-3 hover:bg-gray-500 hover:text-white justify-center mx-auto mt-2 rounded-full border-2 border-gray-400">
+                <a routerLink="/matches/{{KeyAccount}}" class="w-[500px] h-20 flex space-x-3 justify-center mx-auto mt-2 rounded-full"><div class="w-[500px] h-20 flex space-x-3 hover:bg-gray-500 hover:text-white justify-center mx-auto mt-2 rounded-full border-2 border-gray-400">
                     <img class="w-16 h-16 border-2 border-pink-300 rounded-full my-auto" src={{showLike.image}} alt="">
                     <div class="flex">
                         <p class="my-auto">{{showLike.name}} - </p>
@@ -23,7 +23,7 @@
         </div>
         <div class="scrollMouse h-[70vh]">
             <div class="scrollEmotionPeople" *ngFor="let showLike of AllUserBelike" >
-                <a routerLink="" class="w-[500px] h-20 flex space-x-3 justify-center mx-auto mt-2 rounded-full"><div class="w-[500px] h-20 flex space-x-3 hover:bg-gray-500 hover:text-white justify-center mx-auto mt-2 rounded-full border-2 border-gray-400">
+                <a routerLink="/matches/{{KeyAccount}}" class="w-[500px] h-20 flex space-x-3 justify-center mx-auto mt-2 rounded-full"><div class="w-[500px] h-20 flex space-x-3 hover:bg-gray-500 hover:text-white justify-center mx-auto mt-2 rounded-full border-2 border-gray-400">
                     <img class="w-16 h-16 border-2 border-pink-300 rounded-full my-auto" src={{showLike.image}} alt="">
                     <div class="flex">
                         <p class="my-auto">{{showLike.name}} - </p>

@@ -1,6 +1,5 @@
-import { Component, Renderer2, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { ServiceService } from 'src/app/Services/services.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { ILogin } from 'src/app/typeUser';
 import * as CryptoJS from "crypto-js"
 
@@ -16,10 +15,6 @@ export class HeaderComponent {
   takeOneUser: any = {};
   constructor(
     private LoginLogout: ServiceService,
-    private router: ActivatedRoute,
-    private router2: Router,
-    private renderer2: Renderer2,
-    private elementRef: ElementRef
   ) {
     this.LoginLogout.getAllUser().subscribe((data) => {
       this.arrayAllUser = data;
@@ -71,6 +66,8 @@ export class HeaderComponent {
       this.LoginLogout.updateUser(this.takeOneUser).subscribe();
       window.location.href = "";
       // location.reload();
+    }else{
+      window.location.href = `/matches/${this.takeOneUser?.id}`;
     };
   };
   // ============================================main form register
@@ -86,7 +83,7 @@ export class HeaderComponent {
     confirmpass: "",
     gender: "",
     // ========empty default
-    age: 17,
+    age: 0,
     image: "https://picsum.photos/300",
     memberSice: "",
     lastActive: "",
@@ -168,14 +165,20 @@ export class HeaderComponent {
     if (keyOnceToRegister == 1) {
       this.objectsRegister.encodePass = 12345678;
       this.objectsRegister.pass = CryptoJS.AES.encrypt(this.objectsRegister.pass, "okdi").toString();
+      // setAge-recently
+      const nowDay = new Date();
+      let nowYear = nowDay.getFullYear();
+      let getYourAge = Number(this.objectsRegister.dateOfbirth.slice(0, 4));
+      this.objectsRegister.age = nowYear - getYourAge;
+      // action: Add Account
       this.LoginLogout.addUser(this.objectsRegister).subscribe();
       // set repositories your messages.
-      let object:any = {};
+      let object: any = {};
       this.arrayAllUser.map((dataObject: any) => {
         object = dataObject;
       });
-      let object2:any={
-        idMain: object.id+1,
+      let object2: any = {
+        idMain: object.id + 1,
         nameMain: this.objectsRegister.name,
         imageMain: this.objectsRegister.image,
         buddy: [],
@@ -184,8 +187,6 @@ export class HeaderComponent {
       location.reload();
       window.location.href = `matches/${object2.idMain}`;
     };
-    // const encryptedText = CryptoJS.AES.encrypt('Hello, World!', 'vole').toString();
-    // const decryptedText = CryptoJS.AES.decrypt(encryptedText, 'vole').toString(CryptoJS.enc.Utf8);
   };
   Cancel() {
     location.reload();
@@ -194,3 +195,6 @@ export class HeaderComponent {
 // a = "2004-06-11"
 // year = a[:4]  # Lấy 4 ký tự đầu tiên của chuỗi
 // print(year)  # Kết quả: 2004
+
+// const encryptedText = CryptoJS.AES.encrypt('Hello, World!', 'vole').toString();
+// const decryptedText = CryptoJS.AES.decrypt(encryptedText, 'vole').toString(CryptoJS.enc.Utf8);

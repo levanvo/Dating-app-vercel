@@ -5,12 +5,12 @@
     <div class="flex">
         <h5 class="my-auto">Age from :</h5>
         <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
-            [(ngModel)]="objectFilter.numberSmall" name="numberSmall" min="17" max="70" placeholder="...?">
+            [(ngModel)]="objectFilter.numberSmall" name="numberSmall" maxlength="1" min="17" max="70" placeholder="...?">
     </div>
     <div class="flex">
         <h5 class="my-auto">Age to :</h5>
         <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
-            [(ngModel)]="objectFilter.numberLager" name="numberLager" min="17" max="70" placeholder="...?">
+            [(ngModel)]="objectFilter.numberLager" name="numberLager" maxlength="2" min="17" max="70" placeholder="...?">
     </div>
     <div class="flex">
         <h5 class="my-auto">Gender :</h5>
@@ -21,9 +21,10 @@
             <option value="female">Female</option>
         </select>
     </div>
-    <button type="submit" class="bg-sky-800 btn btn-primary">Apply-filters</button>
-    <button type="reset" class="bg-red-700 btn btn-danger">Reset-filters</button>
+    <button type="submit" class="bg-sky-800 active:scale-90 btn btn-primary">Apply-filters</button>
+    <p (click)="onResetFilter()" class="bg-red-700 active:scale-90 btn btn-danger">Reset-filters</p>
 </form>
+<p class="left-[50%] top-14 text-green-500 absolute">{{Message?Message:""}}</p>
 <!-- show all users -->
 <div class="scrollMouse w-[1200px] mx-auto h-[73vh] rounded-md bg-gray-100 mt-3 grid grid-cols-7 ">
     <div *ngFor="let takeUser of ArrayFilter; index as i"

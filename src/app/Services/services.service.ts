@@ -9,8 +9,8 @@ import { ILogin } from '../typeUser';
 })
 export class ServiceService {
   constructor(private http:HttpClient) { }
-  URL_users=`https://rmg3xx-8080.csb.app/users`;
-  URL_message=`https://rmg3xx-8080.csb.app/users`;
+  URL_users=`http://localhost:4000/users`;
+  URL_message=`http://localhost:4000/message`;
 
   // ==============================User
   getAllUser():Observable<ILogin[]>{// getting All Users

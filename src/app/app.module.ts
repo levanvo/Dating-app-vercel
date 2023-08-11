@@ -42,7 +42,7 @@ import { YourImagesComponent } from './HMF/manager/your-images/your-images.compo
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

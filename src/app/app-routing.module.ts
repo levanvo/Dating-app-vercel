@@ -13,24 +13,28 @@ import { InformationComponent } from './HMF/manager/information/information.comp
 import { YourImagesComponent } from './HMF/manager/your-images/your-images.component';
 
 const routes: Routes = [
-  {path:"matches/:id",component:MatchesComponent},
-  {path:"list/:id",redirectTo:"list/:id/friends/:id",pathMatch:"full"},
-  {path:"list/:id",component:ListComponent,children:[
-    {path:"friends/:id",component:FriendsComponent},
-    {path:"waitingFriend/:id",component:WaitingFriendComponent},
-    {path:"liked/:id",component:LikedComponent},
-    {path:"",component:FriendsComponent},
-  ]},
-  {path:"message/:id",component:MessageComponent},
-  {path:"matches/:id/message/:id",component:MessageComponent},
-  {path:"error/:id",component:ErrorComponent},
-  {path:"manager/:id",redirectTo:"manager/:id/information/:id",pathMatch:"full"},
-  {path:"manager/:id",component:ManagerComponent,children:[
-    {path:"information/:id",component:InformationComponent},
-    {path:"yourImages/:id",component:YourImagesComponent},
-  ]},
-  {path:"**",component:MatchesComponent,pathMatch:"full"},
-  {path:"",redirectTo:"matches/:id",pathMatch:"full"},
+  { path: "matches/:id", component: MatchesComponent },
+  { path: "list/:id", redirectTo: "list/:id/friends/:id", pathMatch: "full" },
+  {
+    path: "list/:id", component: ListComponent, children: [
+      { path: "friends/:id", component: FriendsComponent },
+      { path: "waitingFriend/:id", component: WaitingFriendComponent },
+      { path: "liked/:id", component: LikedComponent },
+      { path: "", component: FriendsComponent },
+    ]
+  },
+  { path: "message/:id", component: MessageComponent },
+  { path: "matches/:id/message/:id", component: MessageComponent },
+  { path: "error/:id", component: ErrorComponent },
+  { path: "manager/:id", redirectTo: "manager/:id/information/:id", pathMatch: "full" },
+  {
+    path: "manager/:id", component: ManagerComponent, children: [
+      { path: "information/:id", component: InformationComponent },
+      { path: "yourImages/:id", component: YourImagesComponent },
+    ]   
+  },
+  { path: "**", component: MatchesComponent, pathMatch: "full" },
+  { path: "", redirectTo: "matches/:id", pathMatch: "full" },
 ];
 
 @NgModule({

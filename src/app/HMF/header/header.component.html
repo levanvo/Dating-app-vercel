@@ -26,12 +26,17 @@
 <div *ngIf="objectStatusUser==true" class="header">
     <div class="header grid grid-cols-7 text-white">
         <div class="col-span-5 flex space-x-10">
-            <h3 class="font-bold text-2xl mt-[10px] ml-24 dattingApp"><a class="" routerLink="matches/{{takeOneUser.id}}">Dating app</a></h3>
+            <h3 class="font-bold text-2xl mt-[10px] ml-24 dattingApp"><a class=""
+                    routerLink="matches/{{takeOneUser.id}}">Dating app</a></h3>
             <div class="flex space-x-5 my-auto">
-                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="matches/{{takeOneUser.id}}">Matches</a></h3>
-                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="list/{{takeOneUser.id}}">List</a></h3>
-                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="message/{{takeOneUser.id}}">Messages</a></h3>
-                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu" routerLink="error/{{takeOneUser.id}}">Errors</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu"
+                        routerLink="matches/{{takeOneUser.id}}">Matches</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu"
+                        routerLink="list/{{takeOneUser.id}}">List</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu"
+                        routerLink="message/{{takeOneUser.id}}">Messages</a></h3>
+                <h3 class="text-sm font-bold text-gray-200 "><a class="hover:text-white focusMenu"
+                        routerLink="error/{{takeOneUser.id}}">Errors</a></h3>
             </div>
         </div>
         <div class="flex space-x-3 col-span-2 my-auto">
@@ -39,9 +44,8 @@
                 <img class="w-10 h-10 rounded-md border-2 border-white" src="{{takeOneUser.image}}" alt="">
             </div>
             <li class="text-green-500 my-auto"></li>
-            <div class="shellInfo flex">
-                <li class="shellout leading-10 text-gray-200"><a routerLink="matches/{{takeOneUser.id}}"><span
-                        class="text-white">{{takeOneUser.name}}</span></a>
+            <div class="shellInfo cursor-pointer flex">
+                <li class="shellout flex leading-10 text-gray-200"><span class="text-white">{{takeOneUser.name}}</span>
                     <ul>
                         <a routerLink="manager/{{takeOneUser.id}}">
                             <li class="mt-1">Manager</li>
@@ -50,8 +54,9 @@
                             <li (click)="onLogout()" class="mt-1">Log-out</li>
                         </a>
                     </ul>
+                    <p class="imagePF">&lt;</p>
                 </li>
-                <span class="imagePF">&lt;</span>
+
             </div>
         </div>
     </div>
@@ -82,8 +87,7 @@
             <label class="text-sm my-auto">Male: <input class="" type="radio" required
                     [(ngModel)]="objectsRegister.gender" name="gender" value="male"></label>
             <div class="w-3"></div>
-            <label class="text-sm my-auto">Female: <input class="" type="radio" 
-                [(ngModel)]="objectsRegister.gender"
+            <label class="text-sm my-auto">Female: <input class="" type="radio" [(ngModel)]="objectsRegister.gender"
                     name="gender" value="female"></label>
         </div>
         <h3 class="text-center text-xs text-red-500" *ngIf="ErrorRegister.gender=='false'">Please enter your gender</h3>

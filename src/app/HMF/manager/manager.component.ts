@@ -19,7 +19,7 @@ export class ManagerComponent {
       this.KeyAccount = Number(keyUser.get("id"));
       // console.log(this.KeyAccount);
     });
-    this.controlUser.getOneUser(this.KeyAccount).subscribe((takeData)=>{
+    this.controlUser.getOneUser(this.KeyAccount).subscribe((takeData:any)=>{
       this.InfoUser=takeData;
     });
   };

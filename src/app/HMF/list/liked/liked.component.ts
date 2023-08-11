@@ -18,6 +18,8 @@ export class LikedComponent {
   ) {
     this.router.paramMap.subscribe(key => this.KeyAccount = Number(key.get("id")));
     // get Like and Belike
+    console.log(this.KeyAccount);
+    
     this.controllUser.getOneUser(this.KeyAccount).subscribe((data:any)=>{
       data.switchLove.map((item:any)=>{
         this.controllUser.getOneUser(item).subscribe((data:any)=>{
