@@ -7,6 +7,7 @@
   <style>
     .image{
       border-radius:10px;
+      width:100px;
     }
   </style>
 <img class="image" src="https://24hstore.vn/upload_images/images/2019/11/14/anh-gif-2-min.gif">
