@@ -4,4 +4,4 @@
 - chỉnh đăng nhập nhiều account 1 lúc.
 - tăng bảo mật URL
 - Css somethings other...
-<img src="https://i.gifer.com/78Fx.gif">
+<img src="https://i.gifer.com/Ojhs.gif">
