@@ -70,6 +70,33 @@
           "nameSend": "Lê Văn Võ",
           "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
           "idSend": 2
+        },
+        {
+          "status": 3,
+          "nameAccept": "Bích Ngọc",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1691764874/test/a_1_zvudfj.webp",
+          "idAccept": 3,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        },
+        {
+          "status": 3,
+          "nameAccept": "Ngân",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1691766165/test/c_6_rqakbi.png",
+          "idAccept": 4,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        },
+        {
+          "status": 3,
+          "nameAccept": "Lê Văn Võ",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idAccept": 2,
+          "nameSend": "Thu Hà",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1691836301/test/c_10_dwfy9h.png",
+          "idSend": 5
         }
       ],
       "arrayBeLike": [
@@ -95,11 +122,19 @@
       "status": false,
       "message": "",
       "describes": "hi",
-      "arrayImage": [
-        "https://res.cloudinary.com/darnprw0q/image/upload/v1691764874/test/a_1_zvudfj.webp"
-      ],
+      "arrayImage": [],
       "switchLove": [],
-      "arrayFriend": [],
+      "arrayFriend": [
+        {
+          "status": 3,
+          "nameAccept": "Bích Ngọc",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1691764874/test/a_1_zvudfj.webp",
+          "idAccept": 3,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        }
+      ],
       "arrayBeLike": [],
       "role": "",
       "id": 3
@@ -125,10 +160,54 @@
         "https://res.cloudinary.com/darnprw0q/image/upload/v1691766165/test/c_6_rqakbi.png"
       ],
       "switchLove": [],
-      "arrayFriend": [],
+      "arrayFriend": [
+        {
+          "status": 3,
+          "nameAccept": "Ngân",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1691766165/test/c_6_rqakbi.png",
+          "idAccept": 4,
+          "nameSend": "Lê Văn Võ",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idSend": 2
+        }
+      ],
       "arrayBeLike": [],
       "role": "",
       "id": 4
+    },
+    {
+      "name": "Thu Hà",
+      "email": "ha@gmail.com",
+      "dateOfbirth": "2005-12-07",
+      "city": "Hà Đông - Hà Nội",
+      "country": "Việt Nam",
+      "pass": "U2FsdGVkX19wPd8/wvkC3PzhiS6xDGT5z5XQt/GMvrI=",
+      "encodePass": 12345678,
+      "confirmpass": "2005",
+      "gender": "female",
+      "age": 18,
+      "image": "https://res.cloudinary.com/darnprw0q/image/upload/v1691836301/test/c_10_dwfy9h.png",
+      "memberSice": "",
+      "lastActive": "",
+      "status": false,
+      "message": "",
+      "describes": "",
+      "arrayImage": [],
+      "switchLove": [],
+      "arrayFriend": [
+        {
+          "status": 3,
+          "nameAccept": "Lê Văn Võ",
+          "imageAccept": "https://res.cloudinary.com/darnprw0q/image/upload/v1686660696/test/96603192_qu8vyc.jpg",
+          "idAccept": 2,
+          "nameSend": "Thu Hà",
+          "imageSend": "https://res.cloudinary.com/darnprw0q/image/upload/v1691836301/test/c_10_dwfy9h.png",
+          "idSend": 5
+        }
+      ],
+      "arrayBeLike": [],
+      "role": "",
+      "id": 5
     }
   ],
   "message": [
@@ -215,6 +294,13 @@
       "imageMain": "https://picsum.photos/300",
       "buddy": [],
       "id": 4
+    },
+    {
+      "idMain": 5,
+      "nameMain": "Thu Hà",
+      "imageMain": "https://picsum.photos/300",
+      "buddy": [],
+      "id": 5
     }
   ]
 }

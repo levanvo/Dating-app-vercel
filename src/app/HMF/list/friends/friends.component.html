@@ -1,1 +1,37 @@
-<p class="mt-1 ml-5 text-lg text-blue-400 underline mb-5">Friends list!</p>
+<div class="w-[650px] flex space-x-2 h-10 ">
+    <p class="mt-1 ml-5 text-md text-gray-600 underline mb-5 fontTextLike">Friends-list: <span
+            class="text-yellow-500">({{Friends.length}})</span> </p>
+    <img class="w-7 h-7 animate__animated animate__jackInTheBox animate__repeat-1"
+        src="https://res.cloudinary.com/dcv98ibfk/image/upload/v1691812980/Datting-app/lxzijsih3jkrx4qw6ji0.png" alt="">
+</div>
+<div class="w-[1300px] h-[520px] bg-gray-50 rounded-md">
+    <table class="w-[1200px] mx-auto text-center ">
+        <thead>
+            <tr class="bg-gray-600 text-white">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let show of DetailFriends" class="hover:bg-gray-100 text-gray-500">
+                <td><img class="w-24 h-24 rounded-md mx-auto" src={{show.image}} alt=""></td>
+                <td>{{show.name}}</td>
+                <td class="">{{show.email}}</td>
+                <td>{{show.city}}</td>
+                <td class="text-green-600">{{show.status==false?'offLine':"onLine"}}</td>
+                <td class=" flex justify-center mt-9 space-x-3">
+                    <button>
+                        <img (click)="Message(show.id)" class="w-8 hover:scale-110 duration-100" title="Message" src="https://res.cloudinary.com/dcv98ibfk/image/upload/v1691846978/Datting-app/z7jtg0nikge71k7wdxga.png" alt="">
+                    </button>
+                    <button>
+                        <img (click)="UnFriend(show.id)" class="w-9 hover:scale-110 duration-100" title="unFriend" src="https://res.cloudinary.com/dcv98ibfk/image/upload/v1691846902/Datting-app/plt8dnvzbpzmv7ru16pe.png" alt="">
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

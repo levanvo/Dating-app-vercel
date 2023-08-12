@@ -3,7 +3,8 @@
     <div class="w-[530px] h-[75vh] bg-gray-100 hover:shadow-2xl hover:shadow-black duration-200">
         <div class="w-[530px] flex space-x-2 h-10 ">
             <p class="mt-1 ml-5 text-md text-gray-500 underline mb-5 fontTextLike">All friend requests sent:
-                {{InfoUserSending.length}} </p>
+                <span class="text-yellow-500">{{InfoUserSending.length}}</span>
+            </p>
             <img class="w-7 h-7 animate__animated animate__jackInTheBox animate__repeat-1"
                 src="https://res.cloudinary.com/darnprw0q/image/upload/v1685280943/test/paper-plane_lmelnb.png" alt="">
         </div>
@@ -13,7 +14,9 @@
                     class="border border-gray-400 mb-2 bg-gray-100 hover:bg-gray-200 rounded-lg w-[510px] h-28 flex justify-between mx-auto">
                     <img class="ml-2 w-32 h-24 my-auto rounded-lg" src="{{xem1.imageAccept}}" alt="">
                     <p class="leading-[100px] font-bold">{{xem1.nameAccept}}</p>
-                    <button (click)="UnRequest(xem1.idAccept)" class="w-40 h-[106px] rounded-r-lg mt-[2px] mr-[2px] bg-red-400 hover:bg-red-500 text-white font-bold">Cancel request</button>
+                    <button (click)="UnRequest(xem1.idAccept)"
+                        class="w-40 h-[106px] rounded-r-lg mt-[2px] mr-[2px] bg-red-400 hover:bg-red-500 text-white font-bold">Cancel
+                        request</button>
                 </div>
             </div>
         </div>
@@ -22,7 +25,8 @@
     <div class="w-[730px] h-[75vh] bg-gray-100 hover:shadow-2xl hover:shadow-black duration-200">
         <div class="w-[730px] flex space-x-2 h-10 ">
             <p class="mt-1 ml-5 text-md text-gray-500 underline mb-5 fontTextLike">Invitation recieved:
-                {{InfoUserReceived.length}} </p>
+                <span class="text-yellow-500">{{InfoUserReceived.length}}</span>
+            </p>
             <img class="w-7 h-7 animate__animated animate__jackInTheBox animate__repeat-1"
                 src="https://res.cloudinary.com/darnprw0q/image/upload/v1685280943/test/message_lpflm3.png" alt="">
         </div>

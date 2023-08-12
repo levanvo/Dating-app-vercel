@@ -8,44 +8,44 @@ import { ILogin } from '../typeUser';
   providedIn: 'root'
 })
 export class ServiceService {
-  constructor(private http:HttpClient) { }
-  URL_users=`http://localhost:4000/users`;
-  URL_message=`http://localhost:4000/message`;
+  constructor(private http: HttpClient) { }
+  URL_users = `http://localhost:4000/users`;
+  URL_message = `http://localhost:4000/message`;
 
   // ==============================User
-  getAllUser():Observable<ILogin[]>{// getting All Users
+  getAllUser(): Observable<ILogin[]> {
     return this.http.get<ILogin[]>(`${this.URL_users}`);
   }
-  getOneUser(idUser:any):Observable<ILogin[]>{// getting All Users
+  getOneUser(idUser: any): Observable<ILogin[]> {
     return this.http.get<ILogin[]>(`${this.URL_users}/${idUser}`);
   }
-  addUser(dataUser:any):Observable<ILogin[]>{// getting All Users
-    return this.http.post<ILogin[]>(`${this.URL_users}`,dataUser);
+  addUser(dataUser: any): Observable<ILogin[]> {
+    return this.http.post<ILogin[]>(`${this.URL_users}`, dataUser);
   }
-  updateUser(dataUser:any):Observable<ILogin[]>{// getting All Users
-    return this.http.put<ILogin[]>(`${this.URL_users}/${dataUser.id}`,dataUser);
+  updateUser(dataUser: any): Observable<ILogin[]> {
+    return this.http.put<ILogin[]>(`${this.URL_users}/${dataUser.id}`, dataUser);
   }
-  
+
   // ==============================Message
-  getAllMessage():Observable<any[]>{// getting All Messages
+  getAllMessage(): Observable<any[]> {
     return this.http.get<any[]>(`${this.URL_message}`);
   }
-  getOneMessage(idMessage:any):Observable<any[]>{// getting one Messages
+  getOneMessage(idMessage: any): Observable<any[]> {
     return this.http.get<any[]>(`${this.URL_message}/${idMessage}`);
   }
-  addMessage(dataMessage:any):Observable<any[]>{// add Messages
-    return this.http.post<any[]>(`${this.URL_message}`,dataMessage);
+  addMessage(dataMessage: any): Observable<any[]> {
+    return this.http.post<any[]>(`${this.URL_message}`, dataMessage);
   }
-  updateMessage(dataMessage:any):Observable<any[]>{// update Messages
-    return this.http.put<any[]>(`${this.URL_message}/${dataMessage.id}`,dataMessage);
+  updateMessage(dataMessage: any): Observable<any[]> {
+    return this.http.put<any[]>(`${this.URL_message}/${dataMessage.id}`, dataMessage);
   }
-  deleteMessage(idMessage:any):Observable<any[]>{// delete one Messages
+  deleteMessage(idMessage: any): Observable<any[]> {
     return this.http.delete<any[]>(`${this.URL_message}/${idMessage}`);
   }
 
 
   // =========================================================================================================
-  test(){
+  test() {
     return this.http.get("https://localhost:5001/api/users");
   }
 

@@ -22,7 +22,7 @@ export class WaitingFriendComponent {
         this.ObjectOwner.arrayFriend.map((xem: any) => {
           if (xem.status == 1) {
             this.InfoUserReceived.push(xem);
-          } else if(xem.status==2) {
+          } else if (xem.status == 2) {
             this.InfoUserSending.push(xem);
           };
         });
@@ -30,53 +30,54 @@ export class WaitingFriendComponent {
     });
   };
 
-  UnRequest(idAcceptt:any) {
-    // console.log(this.InfoUserSending);
-
+  UnRequest(idAcceptt: any) {
     // Sender
-    this.ObjectOwner.arrayFriend=this.ObjectOwner.arrayFriend.filter((item:any)=>item.idAccept!=idAcceptt);
+    this.ObjectOwner.arrayFriend = this.ObjectOwner.arrayFriend.filter((item: any) => item.idAccept != idAcceptt);
     this.controlUser.updateUser(this.ObjectOwner).subscribe();
     // Receiver
-    this.controlUser.getOneUser(idAcceptt).subscribe((dataUserAccept:any)=>{
-      dataUserAccept.arrayFriend=dataUserAccept.arrayFriend.filter((item:any)=>item.idSend!=this.ObjectOwner.id);
+    this.controlUser.getOneUser(idAcceptt).subscribe((dataUserAccept: any) => {
+      dataUserAccept.arrayFriend = dataUserAccept.arrayFriend.filter((item: any) => item.idSend != this.ObjectOwner.id);
       this.controlUser.updateUser(dataUserAccept).subscribe();
       location.reload();
     });
-    
+
   };
   Disagree(idSend: any) {
     console.log(idSend);
 
     // Receiver
-    this.ObjectOwner.arrayFriend=this.ObjectOwner.arrayFriend.filter((item:any)=>item.idSend!=idSend);
+    this.ObjectOwner.arrayFriend = this.ObjectOwner.arrayFriend.filter((item: any) => item.idSend != idSend);
     this.controlUser.updateUser(this.ObjectOwner).subscribe();
     // Sender
-    this.controlUser.getOneUser(idSend).subscribe((dataUserAccept:any)=>{
-      dataUserAccept.arrayFriend=dataUserAccept.arrayFriend.filter((item:any)=>item.idAccept!=this.ObjectOwner.id);
+    this.controlUser.getOneUser(idSend).subscribe((dataUserAccept: any) => {
+      dataUserAccept.arrayFriend = dataUserAccept.arrayFriend.filter((item: any) => item.idAccept != this.ObjectOwner.id);
       this.controlUser.updateUser(dataUserAccept).subscribe();
       location.reload();
     });
   }
   Agree(idSend: any) {
-    console.log(idSend);
     // Agree from receiver
-    this.ObjectOwner.arrayFriend.map((itemFriends:any)=>{
-      if(idSend==itemFriends.idSend){
-        itemFriends.status=3;
+    let look = false;
+    this.ObjectOwner.arrayFriend.map((itemFriends: any) => {
+      if (idSend == itemFriends.idSend) {
+        itemFriends.status = 3;
         this.controlUser.updateUser(this.ObjectOwner).subscribe();
+        look = true;
       };
     });
     // Response from sender
-    this.controlUser.getOneUser(idSend).subscribe((dataUserAccept:any)=>{
-      dataUserAccept.arrayFriend.map((itemFriends:any)=>{
-        if(itemFriends.idSend==idSend){
-          itemFriends.status=3;
+    this.controlUser.getOneUser(idSend).subscribe((dataUserAccept: any) => {
+      dataUserAccept.arrayFriend.map((itemFriends: any) => {
+        if (itemFriends.idAccept == this.ObjectOwner.id) {
+          itemFriends.status = 3;
           this.controlUser.updateUser(dataUserAccept).subscribe();
           location.reload();
         };
       });
     });
+    console.log(look);
   };
+
 
 
 
