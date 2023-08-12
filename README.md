@@ -4,4 +4,4 @@
 - chỉnh đăng nhập nhiều account 1 lúc.
 - tăng bảo mật URL
 - Css somethings other...
-<img src="https://i.gifer.com/78Fx.gif">
+<img src="https://e0.pxfuel.com/wallpapers/1016/122/desktop-wallpaper-windows-7-animated-gif-gallery-35-plus-pic-wpw403210-animated-universe.jpg">
