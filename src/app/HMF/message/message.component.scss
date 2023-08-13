@@ -1,21 +1,29 @@
-.messages {
+.rightMessage {
     background-image: url(https://res.cloudinary.com/darnprw0q/image/upload/v1686227590/test/4076929_dmco11.png);
     background-size: 100% 100%;
 }
-
-.scrollListMessage {
-    overflow-y: scroll;
+.bg-message-friends{
+    background: linear-gradient(45deg,gray,white);
 }
-
-.scrollListMessage::-webkit-scrollbar {
-    width: 10px;
+.text-xs-friends{font-size: 10px;}
+// message-X
+.scrollMessageFriends{overflow-x: scroll;}
+.scrollMessageFriends::-webkit-scrollbar {height: 6px;}
+.scrollMessageFriends::-webkit-scrollbar-thumb {
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px;
 }
-
+// message-Y
+.scrollListMessage {overflow-y: scroll;}
+.scrollListMessage::-webkit-scrollbar {width: 10px;}
 .scrollListMessage::-webkit-scrollbar-thumb {
     background-color: rgb(176, 176, 176);
     border-radius: 10px;
 }
-
+.scrollListMessage::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(202, 202, 202);
+    border-radius: 10px;
+}
 .leftMessage {
     border-bottom-left-radius: 5px;
 }

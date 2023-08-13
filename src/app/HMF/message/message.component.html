@@ -1,13 +1,52 @@
 <!-- <h1 class="text-center text-3xl text-gray-600 font-medium">Contact - Message</h1> -->
 <div class="w-[1300px] h-[600px] rounded-md bg-gray-100 mx-auto">
-    <div class="w-[1299px] rounded-t-md bg-gray-600 h-[50px]">
-        <h1 class="font-medium text-white text-xl leading-10 ml-3">Messages</h1>
+    <div class="w-[1299px] rounded-t-md bg-gray-800 h-[50px]">
+        <h1 class="font-medium flex space-x-2 text-gray-300 text-xl pt-[9px] ml-3">Messages <img
+                class="w-10 h-10 animate__animated animate__flash animate__infinite"
+                src="https://res.cloudinary.com/dcv98ibfk/image/upload/v1691922622/Datting-app/qtjdbuyouzh5nkn5wanw.png"
+                alt=""></h1>
     </div>
-    <div class="flex ">
-        <div class="w-[379px] bg-orange-100 h-[550px] leftMessage scrollListMessage">
-            
+    <div class="flex">
+        <div class="w-[379px] bg-orange-100 h-[550px] leftMessage ">
+            <div class="flex mx-auto w-[365px] ml-3 mt-1">
+                <!-- thử nghiệm -->
+                <div class="w-[300px] h-16 flex space-x-3 bg-gray-700 rounded-l-lg scrollMessageFriends">
+                    <div *ngFor="let show of DataFriends" class=" relative ml-1">
+                        <a href="/matches/{{DataUserMain.id}}/message/{{show.id}}">
+                            <img class="w-7 h-7 mt-2 rounded-full" src={{show.image}} alt="">
+                            <p class="text-xs text-gray-400 text-center">{{show.name.split(" ")[1]?show.name.split(" ")[1]:show.name.split(" ")[0]}}</p>
+                            <li class="absolute top-[19px] left-[21px]"></li>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-[65px] h-16 bg-gray-600 rounded-r-full flex">
+                    <img class="w-7 h-7 my-auto border-[1px] border-gray-500 ml-1 p-1 rounded-md "
+                        src="https://res.cloudinary.com/dcv98ibfk/image/upload/v1691930589/Datting-app/o4xoswq1xspu5ggssw3k.png"
+                        alt="">
+                    <li class="text-green-500 mt-2 -ml-1"></li>
+                    <p class="text-gray-300 my-auto -ml-[10px]">0</p>
+                </div>
+            </div>
+            <p class="text-gray-500 text-xs ml-3">Recent chat:</p>
+            <div class="w-[365px] h-[460px] bg-gray-100 rounded-lg mx-auto scrollListMessage">
+                <div class="w-[350px] h-auto bg-gray-100 mx-auto">
+                    <div *ngFor="let show of DataFriends"
+                        class="w-[350px] h-14 bg-message-friends hover:scale-90 duration-200 mt-1 rounded-xl">
+                        <a href="/matches/{{DataUserMain.id}}/message/{{show.id}}">
+                            <div class="flex space-x-1 h-14">
+                                <img class="h-[45px] w-[45px] my-auto ml-2 rounded-full" src={{show.image}} alt="">
+                                <p class="h-10 my-auto w-[1px] bg-gray-200"></p>
+                                <div class="">
+                                    <p class="text-white">{{show.name}} <span class="text-xs-friends text-orange-500">(? - minute ago)</span></p>
+                                    <p>...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-[920px] messages relative h-[550px] rightMessage">
+        <div class="w-[920px] relative h-[550px] rightMessage">
             <div class="w-[919.5px] h-10 bg-gray-300 opacity-80 ">
                 <div class="float-right flex items-center space-x-2">
                     <p>{{UserMessage.name}}</p>
@@ -24,11 +63,12 @@
                         <div class="">
                             <p class="text-gray-400 text-sm">Bạn</p>
                             <div class="flex space-x-1">
-                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show?.writing}}</p>
+                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">
+                                    {{show?.writing}}</p>
                                 <p *ngIf="show.writing" class="text-xs text-gray-300 mt-[14px]">{{show?.time}}</p>
                             </div>
                             <div class="flex">
-                                <img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm">
+                                <a href={{show?.imageSend}} [href]="show.imageSend" target="_blank"><img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm"></a>
                                 <p *ngIf="show.imageSend" class="text-xs text-gray-300 mt-2">{{show?.time}}</p>
                             </div>
                         </div>
@@ -39,11 +79,12 @@
                         <div class="">
                             <p class="text-gray-400 text-sm">{{InforMessage.nameConnect}}</p>
                             <div class="flex space-x-1">
-                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">{{show?.writing}}</p>
+                                <p *ngIf="show.writing" class="leading-8 pl-1 pr-3 rounded-lg bg-white">
+                                    {{show?.writing}}</p>
                                 <p *ngIf="show.writing" class="text-xs text-gray-300 mt-[14px]">{{show?.time}}</p>
                             </div>
                             <div class="flex">
-                                <img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm">
+                                <a href={{show?.imageSend}} [href]="show.imageSend" target="_blank"><img *ngIf="show.imageSend" src={{show?.imageSend}} alt="" class="w-[500px] h-[300px] rounded-sm"></a>
                                 <p *ngIf="show.imageSend" class="text-xs text-gray-300 mt-2">{{show?.time}}</p>
                             </div>
                         </div>
@@ -51,13 +92,19 @@
                 </div>
             </div>
             <form (ngSubmit)="SendMessage(UserMessage.id)" class="flex space-x-1 justify-center">
-                <input [(ngModel)]="contentMessage.writing" name="writing" type="text" class="w-[600px] h-10 outline-0 pl-2 pr-2 shadow-inner shadow-gray-400 rounded-md" placeholder=" Writing ...">
+                <input [(ngModel)]="contentMessage.writing" name="writing" type="text"
+                    class="w-[600px] h-10 outline-0 pl-2 pr-2 shadow-inner shadow-gray-400 rounded-md"
+                    placeholder=" Writing ...">
                 <div class="ShellFileImage border rounded-xl h-10 scale-90 hover:scale-100 duration-100">
-                    <img class="w-14 h-10 pl-1 pt-[2px]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687351616/img_assigment/photo_paplde.png" alt="">
+                    <img class="w-14 h-10 pl-1 pt-[2px]"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1687351616/img_assigment/photo_paplde.png"
+                        alt="">
                     <input type="file" (change)="OnchangeImage($event)" class=" fileImageSend">
                 </div>
                 <button class="w-24 h-10 btn_send text-white rounded-full img_send active:scale-90 duration-100">
-                    <img class="w-8 h-8 mx-auto duration-200" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687353614/img_assigment/send_sttz9v.png" alt="">
+                    <img class="w-8 h-8 mx-auto duration-200"
+                        src="https://res.cloudinary.com/darnprw0q/image/upload/v1687353614/img_assigment/send_sttz9v.png"
+                        alt="">
                 </button>
                 <!-- <button *ngIf="alittleCss==true" class="w-24 h-10 btn_send text-white rounded-full  active:scale-90 duration-100">
                     <img class="w-8 h-8 mx-auto img_send2" src="https://res.cloudinary.com/darnprw0q/image/upload/v1687353614/img_assigment/send_sttz9v.png" alt="">

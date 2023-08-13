@@ -48,7 +48,7 @@ export class FriendsComponent {
   };
   UnFriend(idUnFriend: any) {
     // console.log(idUnFriend);
-    const conside = window.confirm("Correct to unFriend ?");
+    const conside = window.confirm("Can you confirm unFiending ?");
     if (conside) {
       // Account unFriend
       this.Account?.arrayFriend?.map((items: any) => {

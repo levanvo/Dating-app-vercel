@@ -10,18 +10,20 @@ import axios from "axios";
 export class MessageComponent {
   UserMessage: any = {};//người nhận tin
   AccountMessage: any = {};//người gửi tin
-  DatabaseMessage:any[]=[];//dữ liệu liên lạc của account
-  InforMessage:any={};//đoạn chat của 2 bên
+  DatabaseMessage: any[] = [];//dữ liệu liên lạc của account
+  InforMessage: any = {};//đoạn chat của 2 bên
+  DataUserMain: any = {};//dữ liệu account chính
+  DataFriends: any[] = [];//tất cả người bạn
 
   contentMessage: any = {
     idSendMessager: 0,
     writing: "",
-    time:""
+    time: ""
   };
   imageMessage: any = {
     idSendMessager: 0,
     imageSend: "",
-    time:""
+    time: ""
   };
   constructor(
     private idUser: ActivatedRoute,
@@ -37,33 +39,72 @@ export class MessageComponent {
       data.map((xem: any) => {
         if (xem.status == true) {
           this.AccountMessage = xem;
-          this.controlUser.getOneMessage(this.AccountMessage.id).subscribe((dataMessage:any)=>{
+          this.controlUser.getOneMessage(this.AccountMessage.id).subscribe((dataMessage: any) => {
             // console.log(dataMessage);
-            this.DatabaseMessage=dataMessage;
-            dataMessage?.buddy?.map((getData:any)=>{
-              if(getData.idConnect==this.UserMessage.id){
-                this.InforMessage=getData;
-                console.log(getData.content);
-                console.log(getData);
+            this.DatabaseMessage = dataMessage;
+            dataMessage?.buddy?.map((getData: any) => {
+              if (getData.idConnect == this.UserMessage.id) {
+                this.InforMessage = getData;
               };
             });
           });
         };
       });
     });
-    let time=new Date();
-    let time1=time.getDate();
-    let time2=time.getMonth();
-    let time3=time.getFullYear();
-    let time4=time.getHours();
-    let time5=time.getMinutes();
-    let time6=time.getSeconds();
-    const timeVanVo=("Date of Time: "+time1 + "/"+(time2+1)+"/"+time3);
-    const timeVoVan=(time4 + ":"+(time5)+":"+time6);
-    const timeLeVanVo=timeVanVo + " ________ " +timeVoVan;
+    let time = new Date();
+    let time1 = time.getDate();
+    let time2 = time.getMonth();
+    let time3 = time.getFullYear();
+    let time4 = time.getHours();
+    let time5 = time.getMinutes();
+    let time6 = time.getSeconds();
+    const timeVanVo = ("Date of Time: " + time1 + "/" + (time2 + 1) + "/" + time3);
+    const timeVoVan = (time4 + ":" + (time5) + ":" + time6);
+    const timeLeVanVo = timeVanVo + " ________ " + timeVoVan;
     console.log(timeLeVanVo);
-    this.contentMessage.time=timeLeVanVo;
-    this.imageMessage.time=timeLeVanVo;
+    this.contentMessage.time = timeLeVanVo;
+    this.imageMessage.time = timeLeVanVo;
+
+    const xem = Number(window.location.href.slice(30, 32));
+    if (xem + 1 >= 1) {
+      this.controlUser.getOneUser(xem).subscribe((dataUserMain: any) => {
+        this.DataUserMain = dataUserMain;
+        dataUserMain.arrayFriend?.map((items: any) => {
+          if (items.status == 3) {
+            if (items.idAccept != xem) {
+              this.controlUser.getOneUser(items.idAccept).subscribe((dataF1: any) => {
+                this.DataFriends.push(dataF1);
+              });
+            };
+            if (items.idSend != xem) {
+              this.controlUser.getOneUser(items.idSend).subscribe((dataF1: any) => {
+                this.DataFriends.push(dataF1);
+                // console.log(this.DataFriends);
+              });
+            };
+          };
+        });
+      });
+    } else {
+      this.controlUser.getOneUser(Number(window.location.href.slice(30, 31))).subscribe((dataUserMain: any) => {
+        this.DataUserMain = dataUserMain;
+        dataUserMain.arrayFriend?.map((items: any) => {
+          if (items.status == 3) {
+            if (items.idAccept != Number(window.location.href.slice(30, 31))) {
+              this.controlUser.getOneUser(items.idAccept).subscribe((dataF1: any) => {
+                this.DataFriends.push(dataF1);
+              });
+            };
+            if (items.idSend != Number(window.location.href.slice(30, 31))) {
+              this.controlUser.getOneUser(items.idSend).subscribe((dataF1: any) => {
+                this.DataFriends.push(dataF1);
+                console.log(this.DataFriends);
+              });
+            };
+          };
+        });
+      });
+    };
   };
 
   objectMessage1: any = {
@@ -79,8 +120,8 @@ export class MessageComponent {
     content: []
   };
 
-  async OnchangeImage(event:any){
-    const ImageFile=event.target.files[0];
+  async OnchangeImage(event: any) {
+    const ImageFile = event.target.files[0];
     const cloudName = "darnprw0q";
     const PresetName = "vole_2k";
     const FolderName = "test";
@@ -90,20 +131,20 @@ export class MessageComponent {
     upImage.append("upload_preset", PresetName);
     upImage.append("folder", FolderName);
 
-      upImage.append("file", ImageFile);
-      const get_image = await axios.post(api, upImage, {
-        headers: {
-          "Content-Type": "multiple/form-data",
-        },
-      });
-      // console.log(get_image.data.secure_url);
-    this.imageMessage.imageSend=get_image.data.secure_url;
+    upImage.append("file", ImageFile);
+    const get_image = await axios.post(api, upImage, {
+      headers: {
+        "Content-Type": "multiple/form-data",
+      },
+    });
+    // console.log(get_image.data.secure_url);
+    this.imageMessage.imageSend = get_image.data.secure_url;
     // bắt đầu xử lí ảnh cho 2 phía
     this.controlUser.getAllMessage().subscribe((Allmessage: any) => {
       Allmessage?.map((xem: any) => {
         // bên người gửi
         if (xem.idMain == this.AccountMessage.id) {
-          if(xem.buddy.length<=0){
+          if (xem.buddy.length <= 0) {
             this.objectMessage1.idConnect = this.UserMessage.id;
             this.objectMessage1.imageConnect = this.UserMessage.image;
             this.objectMessage1.nameConnect = this.UserMessage.name;
@@ -131,10 +172,10 @@ export class MessageComponent {
             this.controlUser.updateMessage(xem).subscribe();
           };
         };
-        
+
         // bên người nhận
         if (xem.idMain == this.UserMessage.id) {
-          if(xem.buddy.length<=0){
+          if (xem.buddy.length <= 0) {
             this.objectMessage2.idConnect = this.AccountMessage.id;
             this.objectMessage2.imageConnect = this.AccountMessage.image;
             this.objectMessage2.nameConnect = this.AccountMessage.name;
@@ -166,19 +207,19 @@ export class MessageComponent {
       });
     });
     // console.log(this.imageMessage.imageSend);
-    
+
   }
-  
+
   checkingBuddy1 = false;
   checkingBuddy2 = false;
-  
+
   SendMessage(idReceiver1: any) {//id người nhận
-    if(this.contentMessage.writing){
+    if (this.contentMessage.writing) {
       this.controlUser.getAllMessage().subscribe((Allmessage: any) => {
         Allmessage?.map((xem: any) => {
           // bên người gửi
           if (xem.idMain == this.AccountMessage.id) {
-            if(xem.buddy.length<=0){
+            if (xem.buddy.length <= 0) {
               this.objectMessage1.idConnect = this.UserMessage.id;
               this.objectMessage1.imageConnect = this.UserMessage.image;
               this.objectMessage1.nameConnect = this.UserMessage.name;
@@ -208,7 +249,7 @@ export class MessageComponent {
           };
           // bên người nhận
           if (xem.idMain == this.UserMessage.id) {
-            if(xem.buddy.length<=0){
+            if (xem.buddy.length <= 0) {
               this.objectMessage2.idConnect = this.AccountMessage.id;
               this.objectMessage2.imageConnect = this.AccountMessage.image;
               this.objectMessage2.nameConnect = this.AccountMessage.name;
