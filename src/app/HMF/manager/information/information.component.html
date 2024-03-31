@@ -34,7 +34,7 @@
     <!-- Handle change -->
     <!-- <div class="w-[40vw] mx-auto  mt-4"></div> -->
     <div class="w-[500px] mx-auto flex space-x-1 justify-center mt-5">
-        <input type="checkbox" id="showChangePass" hidden>
+        <input autocomplete="" type="checkbox" id="showChangePass" hidden>
         <label for="showChangePass"
             class="text-lg cursor-pointer hover:text-sky-500 flex chosseManager changePass">Setting
             <img class="w-8 h-8" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685422814/test/settings_c8krgg.png" alt="">
@@ -48,20 +48,20 @@
                     alt="">
                 <form (ngSubmit)="OnChangePass()" class="text-center text-sm">
                     <p class="font-medium">1.Password currently:</p>
-                    <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password"
+                    <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password" autocomplete="new-password"
                         [(ngModel)]="ObjectChangePass.passCr" name="passCr" placeholder="... password currently ?">
                     <p class="text-red-500 text-xs" *ngIf="ObjectChangePass.passCr==''">1.empty</p>
                     <p class="font-medium">2.Email:</p>
-                    <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="email"
+                    <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="email"
                         [(ngModel)]="ObjectChangePass.email" name="email" placeholder="... your email ?">
                     <p class="text-red-500 text-xs" *ngIf="ObjectChangePass.email==''">2.empty</p>
                     <p *ngIf="ObjectChangePass.showOkEmail=='false'" class="text-red-500 text-xs">wrong-email !</p>
                     <p class="font-medium">3.Password new:</p>
-                    <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password"
+                    <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password" autocomplete="new-password"
                         [(ngModel)]="ObjectChangePass.passNew" name="passNew" placeholder="... password currently ?">
                     <p class="text-red-500 text-xs" *ngIf="ObjectChangePass.passNew==''">3.empty</p>
                     <p class="font-medium">4.Re-password:</p>
-                    <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password"
+                    <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="password" autocomplete="new-password"
                         [(ngModel)]="ObjectChangePass.rePass" name="rePass" placeholder="... password currently ?">
                     <p class="text-red-500 text-xs" *ngIf="ObjectChangePass.rePass==''">4.empty</p>
                     <div class="flex justify-center ">
@@ -79,7 +79,7 @@
                     <div class="flex justify-center space-x-16">
                         <div class="">
                             <p class="font-medium">1.Name:</p>
-                            <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center"
+                            <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center"
                                [(ngModel)]="ObjectAccount.name" name="name" type="text" placeholder="... name ?">
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.name==''">1.name ?</p>
                         </div>
@@ -87,10 +87,10 @@
                             <p class=" font-medium">2.Gender: </p>
                             <div class="flex justify-center">
                                 <label class="text-sm my-auto bg-gray-400 w-[120px] h-8 pt-[4px] rounded-md border-b-4 border-gray-500 active:border-gray-400 active:translate-y-[3px] duration-100">Male:
-                                    <input [(ngModel)]="ObjectAccount.gender" name="gender" type="radio" required value="male"></label>
+                                    <input autocomplete="" [(ngModel)]="ObjectAccount.gender" name="gender" type="radio" required value="male"></label>
                                 <div class="w-3"></div>
                                 <label class="text-sm my-auto bg-gray-400 w-[120px] h-8 pt-[4px] rounded-md border-b-4 border-gray-500 active:border-gray-400 active:translate-y-[3px] duration-100">Female:
-                                    <input [(ngModel)]="ObjectAccount.gender" name="gender" type="radio" value="female"></label>
+                                    <input autocomplete="" [(ngModel)]="ObjectAccount.gender" name="gender" type="radio" value="female"></label>
                             </div>
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.gender==''">2.gender ?</p>
                         </div>
@@ -99,14 +99,14 @@
                     <div class="flex justify-center space-x-16">
                         <div class="">
                             <p class="font-medium">3.Email:</p>
-                            <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="email"
+                            <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="email"
                             [(ngModel)]="ObjectAccount.email" name="email" placeholder="... email ?">
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.email==''">3.email ?</p>
                             <p *ngIf="ErrorInfo.emailCheck=='false'" class="text-red-500 text-xs">wrong-email !</p>
                         </div>
                         <div class="">
                             <p class="font-medium">4.Date of birthday:</p>
-                            <input class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="date"
+                            <input autocomplete="" class="w-[250px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="date"
                             [(ngModel)]="ObjectAccount.dateOfbirth" name="dateOfbirth">
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.dateOfbirth==''">4.dateOf-birthday ?</p>
                         </div>
@@ -115,19 +115,19 @@
                     <div class="flex justify-center space-x-[26px]">
                         <div class="">
                             <p class="font-medium">5.Age:</p>
-                            <input disabled class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="number"
+                            <input autocomplete="" disabled class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="number"
                                [(ngModel)]="ObjectAccount.age" name="age" placeholder="... age ?">
                             <!-- <p class="text-red-500 text-xs" *ngIf="ObjectAccount.age==''">5.age ?</p> -->
                         </div>
                         <div class="">
                             <p class="font-medium">6.City:</p>
-                            <input class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="text"
+                            <input autocomplete="" class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="text"
                                [(ngModel)]="ObjectAccount.city" name="city" placeholder="... city ?">
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.city==''">6.city</p>
                         </div>
                         <div class="">
                             <p class="font-medium">7.Country:</p>
-                            <input class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="text"
+                            <input autocomplete="" class="w-[170px] h-8 shadow-gray-400 shadow-inner outline-0 text-center" type="text"
                                [(ngModel)]="ObjectAccount.country" name="country" placeholder="... country ?">
                             <p class="text-red-500 text-xs" *ngIf="ObjectAccount.country==''">7.country</p>
                         </div>

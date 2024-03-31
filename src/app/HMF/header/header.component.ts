@@ -35,9 +35,12 @@ export class HeaderComponent {
   ErrorLogin = "";
   onLogin() {
     this.arrayAllUser.map((show: any) => {
+      console.log("showPass");
       // decode Password.
       let showPass: any[] = [];
       showPass.push(CryptoJS.AES.decrypt(show.pass, "okdi").toString(CryptoJS.enc.Utf8));
+      
+      
       // Compare password encoded and Login
       if (show.email == this.objectLogin.email) {
         for (let y = 0; y < showPass.length; y++) {

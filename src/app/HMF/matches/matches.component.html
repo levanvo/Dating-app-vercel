@@ -4,12 +4,12 @@
 <form (ngSubmit)="onFilter()" class="flex space-x-5 justify-center mt-3">
     <div class="flex">
         <h5 class="my-auto">Age from :</h5>
-        <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
+        <input autocomplete="" class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
             [(ngModel)]="objectFilter.numberSmall" name="numberSmall" maxlength="1" min="17" max="70" placeholder="...?">
     </div>
     <div class="flex">
         <h5 class="my-auto">Age to :</h5>
-        <input class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
+        <input autocomplete="" class="w-20 h-9 bg-gray-200 outline-0 border-2 border-gray-100 rounded-md text-center" type="number"
             [(ngModel)]="objectFilter.numberLager" name="numberLager" maxlength="2" min="17" max="70" placeholder="...?">
     </div>
     <div class="flex">
@@ -31,7 +31,7 @@
         class="col-span-1 w-[160px] m-[6px] h-[210px] rounded-md shadow hover:shadow-gray-400 border border-sky-500">
         <div class=" shellUser"><!-- relative -->
             <div class="w-[140px] h-[150px] mx-auto rounded-md mt-2 shellImageUser">
-                <input type="checkbox" id="{{takeUser.id}}" class="infoUser1" hidden>
+                <input autocomplete="" type="checkbox" id="{{takeUser.id}}" class="infoUser1" hidden>
                 <label for="{{takeUser.id}}" class="infoUser1"><img class="w-[140px] h-[150px] cursor-pointer mx-auto rounded-md imageUser" src="{{takeUser.image}}"alt=""></label>
                 <div class="infoUser2">
                     <div class="w-[435px] m-2 rounded-t-md h-[150px] flex space-x-2 bg-gray-100 infoReview">

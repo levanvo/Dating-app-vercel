@@ -6,7 +6,7 @@
 </div>
 <form (ngSubmit)="UploadImage()" class="w-[900px] mx-auto h-32 bg-black flex justify-center rounded-t-md space-x-10">
     <div class="w-[150px] h-28 my-auto rounded-md bg-gray-100">
-        <input (change)="HandleImage($event)" multiple
+        <input autocomplete="" (change)="HandleImage($event)" multiple
          type="file" class="w-[150px] h-28 rounded-md fileimage">
     </div>
     <div  class="w-[400px] h-28 my-auto rounded-md bg-gray-100 scrollUplaod">
